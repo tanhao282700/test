@@ -1,0 +1,725 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="scripts/reset.css"/>
+  <script src="scripts/jquery-1.8.2.js"></script>
+  <script src="scripts/three.js"></script>
+  <script src="scripts/stats.js"></script>
+  <script src="scripts/OrbitControls.js"></script>
+  <script src="scripts/GLTFLoader.js"></script>
+  <script src="scripts/STLLoader.js"></script>
+  <script src="scripts/Tween.js"></script>
+  <script src="scripts/CSS3DRenderer.js"></script>
+  <script src="scripts/Sky.js"></script>
+
+  <script>
+    ///////////////////////////////////////////////////////////threejs的基本///////////////////////////////////////////////////////////////////
+    //场景
+    var scene;
+    var cssScene;
+    var cssScene1;
+
+    function initScene() {
+      scene = new THREE.Scene();
+      cssScene = new THREE.Scene();
+      cssScene1 = new THREE.Scene();
+    }
+
+    //渲染器
+    var renderer;
+    var rendererCSS;
+
+    function initThree() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+      renderer.domElement.style.position = 'absolute';
+      renderer.domElement.style.top = 0;
+      renderer.domElement.style.zIndex = 0;
+      renderer.setSize(width, height);
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      renderer.shadowMap.enabled = true;
+      document.getElementById("canvas3d").appendChild(renderer.domElement);
+
+      rendererCSS = new THREE.CSS3DRenderer({alpha: true});
+      rendererCSS.domElement.style.position = 'absolute';
+      rendererCSS.domElement.style.top = 0;
+      rendererCSS.domElement.style.margin = 0;
+      rendererCSS.domElement.style.padding = 0;
+      rendererCSS.domElement.style.zIndex = 1;
+      rendererCSS.setSize(width, height);
+      document.getElementById("canvas3d").appendChild(rendererCSS.domElement);
+    }
+
+    //相机
+    var camera;
+
+    function initCamera() {
+      camera = new THREE.PerspectiveCamera(45, width / height, 1, 20000);
+      camera.position.set(-20, 20, 0);
+      camera.up.set(0, 1, 0);
+      camera.lookAt(new THREE.Vector3(0, 0, 0));
+    }
+
+    //总体浏览控制器
+    var controls;
+
+    function initControls() {
+      controls = new THREE.OrbitControls(camera, rendererCSS.domElement);
+      // 使动画循环使用时阻尼或自转 意思是否有惯性
+      controls.enableDamping = false;
+      //动态阻尼系数 就是鼠标拖拽旋转灵敏度
+      controls.dampingFactor = 0.1;
+      //是否可以缩放
+      controls.enableZoom = true;
+      //是否自动旋转
+      controls.autoRotate = false;
+      //设置相机距离原点的最近距离
+      controls.minDistance = 0;
+      //设置相机距离原点的最远距离
+      controls.maxDistance = 30000;
+      //是否开启右键拖拽
+      controls.enablePan = false;
+      //上下最大角度
+      controls.minPolarAngle = 0; // radians
+      controls.maxPolarAngle = Math.PI; // radians
+    }
+
+    //灯光
+    var directionalLight;
+    var directionalLight1;
+
+    function initLight() {
+      //自然光
+      light = new THREE.AmbientLight(0x0c0c0c, 0.5);
+      scene.add(light);
+      hemiLight = new THREE.HemisphereLight(0xbbbbff, 0x444422, 1);
+      hemiLight.position.set(10, 10, 0);
+      scene.add(hemiLight);
+
+      directionalLight = new THREE.DirectionalLight("#ffffff", 0.5);
+      directionalLight.position.set(0, 200, 0);
+      directionalLight.shadow.camera.near = 0; //产生阴影的最近距离
+      directionalLight.shadow.camera.far = 600; //产生阴影的最远距离
+      directionalLight.shadow.camera.left = -100; //产生阴影距离位置的最左边位置
+      directionalLight.shadow.camera.right = 100; //最右边
+      directionalLight.shadow.camera.top = 100; //最上边
+      directionalLight.shadow.camera.bottom = -100; //最下面
+
+      //这两个值决定使用多少像素生成阴影 默认512
+      directionalLight.shadow.mapSize.height = 1024;
+      directionalLight.shadow.mapSize.width = 1024;
+
+      //告诉平行光需要开启阴影投射
+      directionalLight.castShadow = true;
+
+      scene.add(directionalLight);
+    }
+
+    //场景背景
+    function getskyBox() {
+      scene.background = new THREE.CubeTextureLoader().setPath('./model/').load(["posx.jpg", "negx.jpg", "posy.jpg", "negy.jpg", "posz.jpg", "negz.jpg"]);
+    }
+
+    //渲染器刷新
+    function render() {
+      controls.update();
+      renderer.render(scene, camera);
+      rendererCSS.render(cssScene, camera);
+      window.onresize = onWindowResize;
+    }
+
+    //动画
+    function animate() {
+      render();
+      requestAnimationFrame(animate);
+      stats.update();
+      //likeHover();
+    }
+
+    //窗口更新函数
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      rendererCSS.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    //辅助坐标
+    var clock = new THREE.Clock();
+
+    function initAxis() {
+      var axes = new THREE.AxisHelper(10000);
+      scene.add(axes);
+    }
+
+    //性能插件
+    var stats;
+
+    function initStats() {
+      stats = new Stats();
+      document.body.appendChild(stats.dom);
+    }
+
+    //加载时运行
+    function threeStart() {
+      initScene();
+      initThree();
+      initCamera();
+      initLight();
+      loadGLTF('./model/', 'hotelmodel');
+      loadSTL('./model/', 'fengsan');
+      initControls();
+      initStats();
+      animate();
+      //initAxis();
+      createcss3Dsprite("css3Ddiv");
+    }
+
+    ////////////////////////////////////////////////////////加载GLTF模型////////////////////////////////////
+    //定义objects数组用于存放模型里的Mesh
+    var gltfobj;
+    //加载外部模型
+    /*var visiablefalse = ["product-608a676d-a999-43fc-8863-377754ec665d-body",
+        "product-608a676d-a999-43fc-8863-377754ec68d5-body",
+        "product-608a676d-a999-43fc-8863-377754ec69c0-body",
+        "product-608a676d-a999-43fc-8863-377754ec6902-body",
+        "product-608a676d-a999-43fc-8863-377754ec6b56-body",
+        "product-608a676d-a999-43fc-8863-377754ec6be2-body",
+        "product-608a676d-a999-43fc-8863-377754ec6b00-body",
+        "product-608a676d-a999-43fc-8863-377754ec6b4a-body",
+        "product-608a676d-a999-43fc-8863-377754ec6a66-body",
+        "product-608a676d-a999-43fc-8863-377754ec6bad-body",
+        "product-608a676d-a999-43fc-8863-377754edac65-body",
+        "product-ab05fefc-ce11-4e2c-94d0-f7c5e0316af3-body"];*/
+    pointionobj = {
+      "deviceWaterhost1": [{"x": 1.44, "y": 0.83, "z": 10.51},
+        {"x": 2.42, "y": 0.83, "z": 10.51},
+        {"x": 1.44, "y": 0.83, "z": 9.3},
+        {"x": 2.42, "y": 0.83, "z": 9.3},
+        {"x": 1.44, "y": 0.83, "z": 8.09},
+        {"x": 2.42, "y": 0.83, "z": 8.09}],
+      "deviceWaterhost2": [{"x": 5.1, "y": 0.83, "z": 10.51},
+        {"x": 6.08, "y": 0.83, "z": 10.51},
+        {"x": 5.1, "y": 0.83, "z": 9.3},
+        {"x": 6.08, "y": 0.83, "z": 9.3},
+        {"x": 5.1, "y": 0.83, "z": 8.09},
+        {"x": 6.08, "y": 0.83, "z": 8.09}]
+    };
+
+    function loadSTL(path, fileName) {
+      var loader = new THREE.STLLoader();
+      loader.load('./model/fengsan.stl', function (geometry) {
+        for (var key in pointionobj) {
+          var material = new THREE.MeshPhongMaterial({color: 0x008888, roughness: 0.5, metalness: 0.5});
+          var mesh = new THREE.Mesh(geometry, material);
+          mesh.rotation.set(-Math.PI / 2, 0, 0);
+          mesh.scale.set(0.016, 0.016, 0.016);
+          mesh.castShadow = true;
+          mesh.receiveShadow = true;
+          var New3D = new THREE.Object3D();
+          New3D.name = key;
+          pointionobj[key].forEach(function (value) {
+            var newmesh = mesh.clone();
+            newmesh.position.set(value.x, value.y, value.z);
+            New3D.add(newmesh);
+          });
+          scene.add(New3D);
+        }
+      });
+    }
+
+    function loadGLTF(path, fileName) {
+      var loader = new THREE.GLTFLoader();
+      loader.load(`${path}${fileName}.gltf`, function (gltf) {
+        var object = gltf.scene;
+        /*visiablefalse.forEach(function (value) {
+            object.getObjectByName(value).visible = false;
+        })*/
+        scene.add(object);
+        gltfobj = object.children;
+        object.rotation.x = THREE.Math.degToRad(-90);
+        object.rotation.z = THREE.Math.degToRad(180);
+        //模型居中
+        var center = new THREE.Box3().expandByObject(object).getCenter(new THREE.Vector3());
+        object.position.set(-center.x, -center.y, -center.z);
+        helper = new THREE.BoundingBoxHelper(object, 0xff0000);
+        object.traverse(function (child) {
+          if (child.isMesh) {
+            child.castShadow = true;
+            child.receiveShadow = true;
+          }
+        });
+        var texture = new THREE.TextureLoader().load("stone-wall.jpg");
+        texture.wrapS = THREE.RepeatWrapping;
+        texture.wrapT = THREE.RepeatWrapping;
+        texture.repeat.set(10, 10);
+        var mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(100, 100), new THREE.MeshPhongMaterial({map: texture}));
+        mesh.rotation.x = -Math.PI / 2;
+        mesh.position.set(0, -1.8, 0);
+        mesh.receiveShadow = true;
+        scene.add(mesh);
+
+        function draw() {
+          var rotation_z = (object.rotation.z + 0.003) % (Math.PI * 2);
+          object.rotation.z = rotation_z;
+          mesh.rotation.z = rotation_z;
+          setTimeout(draw, 1);
+        }
+        changeDevice();
+
+        /*changeDevice("product-16f7b54a-1d6d-4450-a883-c034787d3203-body", 1);
+        changeDevice("product-16f7b54a-1d6d-4450-a883-c034787d32ea-body", 2);
+        changeDevice("product-5af82546-e39b-4e8a-95cb-31997ebf1bc7-body", 0);
+        changeDevice("product-16f7b54a-1d6d-4450-a883-c034787d46aa-body", 3);*/
+        //addcss3Dsprite();
+        canvasSprite();
+      });
+    }
+
+    ///////////////////////////////////////////////////windows监听事件/////////////////////////////////////////////////////////////////////////
+    window.addEventListener('mousemove', onMouseMove, false);
+
+    function setLockvalue() {
+      lockValue = true;
+    }
+
+    function modelClick(name) {
+      console.log("模型单击事件");
+      reDeviceClick(name)
+    }
+
+    $(document).mousedown(function (e) {
+      if (e.button === 0) {
+        if (intersects.length > 0 && !lockValue) {
+          modelClick(intersects[0].object.name);
+        }
+      } else if (e.button === 2) {
+        if (intersects.length > 0) {
+          setLockvalue();
+        }
+      }
+    })
+
+
+    //声明raycaster和mouse变量
+    var raycaster = new THREE.Raycaster();
+    var mouse = new THREE.Vector2();
+    var intersects;
+    var eventMouse;
+
+    function onMouseMove(event) {
+      if (!lockValue) {
+        event.preventDefault();
+        eventMouse = {x: event.clientX, y: event.clientY};
+        mouse.x = ((event.clientX) / window.innerWidth) * 2 - 1;
+        mouse.y = -((event.clientY) / window.innerHeight) * 2 + 1;
+        raycaster.setFromCamera(mouse, camera);
+        intersects = raycaster.intersectObjects(objects);
+
+        if (intersects.length !==0){
+          console.log(intersects[0].object.name);
+          for (let i in jsonObj){
+            if (i === intersects[0].object.name) {
+              console.log('找到你了！！');
+              reFoundObjName(i);
+              break;
+            }
+            console.log('停了')
+          }
+        }
+
+        likeHover();
+      }
+    }
+
+    var threeMesh;
+    var normalMaterial = new THREE.MeshNormalMaterial();
+
+    function changeLockvalue() {
+      lockValue = false;
+      console.log("按钮点击");
+      cancelDevice();
+    }
+
+    function isDevice(oldMesh, newMesh) {
+      threeMesh = oldMesh;
+      threeMesh.material.visible = false;
+      newMesh.material.visible = true;
+      chagecss3Dspeite();
+    }
+
+    function notDevice(oldMesh) {
+      threeMesh = oldMesh;
+      var str = "new THREE." + threeMesh.material.type + "(threeMesh.material)";
+      threeMesh.currentmaterial = eval(str);
+      threeMesh.material = normalMaterial;
+      chagecss3Dspeite();
+    }
+
+    function chagecss3Dspeite() {
+      ///////將mesh的name传给父页面，获取设备数据
+      /*var htmltext1 = "<div style='background-color:#FFFFFF;border-radius:5px;padding:8px'>" + Math.random() + "<a href='http://localhost:50905/Web3D.html'>測試" + Math.random() + "</a><div style='color:red'>123</div><input type='submit' value='測試' style='cursor:pointer' onclick='changeLockvalue()'/></div>";
+      var htmltext = "<style type='text/css'>" +
+        ".messageDiv {" +
+        "display: block;" +
+        "width: 220px;" +
+        "height: auto;" +
+        "padding: 2px;" +
+        "position: relative;" +
+        "-moz-border-radius: 12px;" +
+        "-webkit-border-radius: 12px;" +
+        "border-radius: 12px;" +
+        "background-color:#ffffff;" +
+        "}" +
+        ".messageDiv:before {" +
+        "content: '';" +
+        "width: 0;" +
+        "height: 0;" +
+        "right: 45%;" +
+        "top: 100%;" +
+        "position: absolute;" +
+        "border-left: 13px solid transparent;" +
+        "border-top: 26px solid #ffffff;" +
+        "opacity: 1;" +
+        "border-right: 13px solid transparent;" +
+        "}" +
+        "</style>" +
+        "<div class='messageDiv'> " + htmltext1 +
+        "</div>"*/
+      updatecss3Dsprite("css3Ddiv", html);
+      css3Ddivobj.style.visibility = "visible";
+    }
+
+    function likeHover() {
+      if (typeof (intersects) != "undefined" && intersects.length > 0 && !lockValue) {
+        var moveMouse = convertTo3DCoordinate(eventMouse.x, eventMouse.y - css3Ddivobj.offsetHeight);
+        typeof(css3Dsprite) != "undefined" ? css3Dsprite.position.set(moveMouse.x, moveMouse.y, moveMouse.z) : null;
+        if (threeMesh == null || intersects[0].object.name != threeMesh.name) {
+          if (threeMesh) {
+            if (threeMesh.material.visible) {
+              threeMesh.material = threeMesh.currentmaterial;
+            } else {
+              threeMesh.material.visible = true;
+              scene.getObjectByName(newmeshJson[threeMesh.name]).material.visible = false;
+            }
+          }
+          typeof (newmeshJson[intersects[0].object.name]) == "undefined" ? notDevice(intersects[0].object) : isDevice(intersects[0].object, scene.getObjectByName(newmeshJson[intersects[0].object.name]));
+        } else {
+        }
+      } else {
+        if (threeMesh) {
+          if (threeMesh) {
+            if (threeMesh.material.visible) {
+              threeMesh.material = threeMesh.currentmaterial;
+            } else {
+              threeMesh.material.visible = true;
+              scene.getObjectByName(newmeshJson[threeMesh.name]).material.visible = false;
+            }
+          }
+        }
+        threeMesh = null;
+        lockValue ? css3Ddivobj.style.visibility = "visible" : css3Ddivobj.style.visibility = "hidden";
+      }
+    }
+
+    //////////////////////////////////////////////////////////////设备状态改变//////////////////////////////////////////////////////////////////////////////////////
+    var jsonObj = null;
+    var ischageMaterial = false;
+
+    function changeDevice(meshName, value) {
+      ischageMaterial && typeof(jsonObj[meshName]) != "undefined" ? changeStaues(meshName, value) : newMaterial(meshName, value);
+    }
+
+    var newmeshJson = {};
+    var objects = [];
+    var reg = new RegExp("[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}");
+
+    function newMaterial(meshName, value) {
+      for (var key in jsonObj) {
+        var mesh = scene.getObjectByName(key);
+        objects.push(mesh);
+        var newMaterial = "new THREE." + mesh.material.type + "(mesh.material)";
+        mesh.material = eval(newMaterial);
+        mesh.material.roughness = 0.5;
+        mesh.material.metalness = 0.5;
+        var newMesh = new THREE.Mesh(mesh.geometry.clone(), new THREE.MeshNormalMaterial());
+        newMesh.material.visible = false;
+        var center = new THREE.Box3().expandByObject(mesh).getCenter(new THREE.Vector3());
+        newMesh.name = key.match(reg).toString();
+        newmeshJson[key] = key.match(reg).toString();
+        scene.add(NewObject3D(center.x, center.y, center.z, newMesh));
+      }
+      ischageMaterial = true;
+      changeStaues(meshName, value);
+    }
+
+    function changeStaues(meshName, value) {
+      typeof (jsonObj[meshName]) != "undefined" && typeof (jsonObj[meshName]).runname != "undefined" ? clearTimeout(jsonObj[meshName].runname) : null;
+      typeof (jsonObj[meshName]) != "undefined" && typeof (jsonObj[meshName]).errname != "undefined" ? clearTimeout(jsonObj[meshName].errname) : null;
+      var mesh = scene.getObjectByName(meshName);
+      if (value == 0) {//停止
+        mesh.material.color.setHex(0xf0f0f0);
+        typeof (jsonObj[meshName].objs) != "undefined" ? scene.getObjectByName(jsonObj[meshName].objs).children[0].material.color.setHex(0xf0f0f0) : null;
+      } else if (value == 1) {//运行
+        mesh.material.color.setHex(0x008888);
+        typeof (jsonObj[meshName].objs) != "undefined" ? draw() : null;
+        var rotation_z = 0;
+
+        function draw() {
+          rotation_z = (rotation_z - 0.1) % (Math.PI * 2);
+          scene.getObjectByName(jsonObj[meshName].objs).children[0].material.color.setHex(0x008888);
+          scene.getObjectByName(jsonObj[meshName].objs).traverse(function (child) {
+            if (child.isMesh) {
+              child.rotation.z = rotation_z;
+            }
+          });
+          jsonObj[meshName].runname = setTimeout(draw, 1);
+        }
+      } else if (value == 2) {//故障
+        var errchilds = [mesh];
+        typeof (jsonObj[meshName].objs) != "undefined" ? errchilds.push(scene.getObjectByName(jsonObj[meshName].objs).children[0]) : null;
+        errorChange();
+
+        function errorChange() {
+          errchilds.forEach(function (value) {
+            value.material.color.getHex() == 16711680 ? value.material.color.setHex(0xf0f0f0) : value.material.color.setHex(0xff0000);
+          })
+          jsonObj[meshName].errname = setTimeout(errorChange, 300);
+        }
+      } else if (value == 3) {//告警
+        mesh.material.color.setHex(0xffd306);
+        typeof (jsonObj[meshName].objs) != "undefined" ? scene.getObjectByName(jsonObj[meshName].objs).children[0].material.color.setHex(0xFFD306) : null;
+      }
+    }
+
+    ///////////////////////////////////////////////////////////使用3Ddiv展示设备//////////////////////////////////////////////////////////////////////////////////
+    /*var messageobj = {
+      "device_Waterpump1": {
+        "coordinate": {"x": 1.34, "y": 0.8, "z": 4.195},
+        "canvas": null,
+        "textureCanvas": null,
+        "textinfo": {"Loding...": {"fillStyle": "#f0f0f0", "font": 100}, "1#循环水泵": {"fillStyle": "#000", "font": 50}}
+      },
+      "device_Waterpump2": {
+        "coordinate": {"x": 3.16, "y": 0.8, "z": 4.195},
+        "canvas": null,
+        "textureCanvas": null,
+        "textinfo": {"Loding...": {"fillStyle": "#ff0", "font": 100}, "2#循环水泵": {"fillStyle": "#000", "font": 50}}
+      },
+      "device_Waterhost1": {
+        "coordinate": {"x": 1.93, "y": 1.4, "z": 9.187},
+        "canvas": null,
+        "textureCanvas": null,
+        "textinfo": {"Loding...": {"fillStyle": "#0f0", "font": 100}, "1#空调主机": {"fillStyle": "#000", "font": 50}}
+      },
+      "device_Waterhost2": {
+        "coordinate": {"x": 5.89, "y": 1.4, "z": 9.187},
+        "canvas": null,
+        "textureCanvas": null,
+        "textinfo": {"Loding...": {"fillStyle": "#f00", "font": 100}, "2#空调主机": {"fillStyle": "#000", "font": 50}}
+      }
+    }*/
+    var messageobj = null;
+
+    function canvasSprite() {
+      for (var key in messageobj) {
+        //将生成的canvas作为贴图
+        messageobj[key].canvas = document.createElement("canvas");
+        var textureCanvas = new THREE.Texture(messageobj[key].canvas);
+        messageobj[key].textureCanvas = textureCanvas;
+        getCanvas(key, messageobj[key].textinfo);
+        var spriteMaterial = new THREE.SpriteMaterial({map: textureCanvas});
+        var sprite = new THREE.Sprite(spriteMaterial);
+        sprite.position.set(messageobj[key].coordinate.x, messageobj[key].coordinate.y, messageobj[key].coordinate.z);
+        sprite.name = key;
+        sprite.scale.set(1.95, 1, 1);
+        scene.add(sprite);
+      }
+    }
+
+    function getCanvas(objkey, txtobj) {
+      var txtXcood = [];
+      var border = 2;
+      var canvas = messageobj[objkey].canvas;
+      var ctx = canvas.getContext("2d");
+      var ctxwidth = 80;
+      var ctxheight = 0;
+      var ctxfont = 0;
+      for (var key in txtobj) {
+        ctx.font = "italic small-caps 100 " + txtobj[key].font + "px Arial";
+        ctxwidth = ctxwidth > ctx.measureText(key).width ? ctxwidth : ctx.measureText(key).width;
+        txtXcood.push(ctx.measureText(key).width);
+        ctxheight += txtobj[key].font * 1.7;
+      }
+      ;
+      canvas.width = ctxwidth + 20;
+      canvas.height = ctxheight;
+      //canvas.style.width = (ctxwidth + 30)  + "px";
+      //canvas.style.height = ctxheight  + "px";
+      drawRoundRect(ctx, border / 2, border / 2, canvas.width - border, canvas.height - 15 - border, canvas.width / 30, border);
+      var i = 0;
+      for (var key in txtobj) {
+        i++;
+        ctx.font = "normal small-caps 100 " + txtobj[key].font + "px Arial";
+        ctx.fillStyle = txtobj[key].fillStyle;
+        ctxfont += txtobj[key].font * 1.1;
+        ctx.fillText(key, (canvas.width - txtXcood[i - 1]) / 2, ctxfont);
+        ctxfont += txtobj[key].font / 4;
+      }
+      ctx.scale(2, 2);
+      messageobj[objkey].textureCanvas.needsUpdate = true;
+      typeof(scene.getObjectByName(objkey)) != "undefined" ? scene.getObjectByName(objkey).scale.set(canvas.width / (canvas.height - 15), 1, 1) : null;
+    }
+
+    function drawRoundRect(cxt, x, y, width, height, radius, lineWidth) {
+      cxt.beginPath();
+      cxt.strokeStyle = "#191970";
+      cxt.fillStyle = "#63B8FF";
+      cxt.lineWidth = lineWidth;
+      cxt.arc(x + radius, y + radius, radius, Math.PI, Math.PI * 3 / 2);
+      cxt.lineTo(width - radius + x, y);
+      cxt.arc(width - radius + x, radius + y, radius, Math.PI * 3 / 2, Math.PI * 2);
+      cxt.lineTo(width + x, height + y - radius);
+      cxt.arc(width - radius + x, height - radius + y, radius, 0, Math.PI * 1 / 2);
+      cxt.lineTo(width / 2 + 10 + x, height + y);
+      cxt.lineTo(width / 2 + x, height + 15 + y);
+      cxt.lineTo(width / 2 - 10 + x, height + y);
+      cxt.lineTo(radius + x, height + y);
+      cxt.arc(radius + x, height - radius + y, radius, Math.PI * 1 / 2, Math.PI);
+      cxt.closePath();
+      cxt.fill();
+      cxt.stroke();
+    }
+
+    function chageBackgroundrotation() {
+      sprinteBackground.forEach(function (value) {
+        value.rotation.set(camera.rotation.x, camera.rotation.y, camera.rotation.z);
+      })
+    }
+
+    var css3Ddivobj = document.createElement("div");
+    css3Ddivobj.style.visibility = "hidden";
+    var css3Dsprite;
+
+    function createcss3Dsprite(id) {
+      css3Ddivobj.id = id;
+      css3Dsprite = new THREE.CSS3DSprite(css3Ddivobj);
+      css3Dsprite.position.set(0, 0, 1000);
+      cssScene.add(css3Dsprite);
+    }
+
+    function updatecss3Dsprite(id, htmltext) {
+      $("#" + id).html(htmltext);
+    }
+
+    var lockValue = false;
+
+    //2维坐标转3维坐标
+    function convertTo3DCoordinate(clientX, clientY) {
+      var vector = new THREE.Vector3(
+        (clientX / window.innerWidth) * 2 - 1,
+        -(clientY / window.innerHeight) * 2 + 1,
+        0.9983);
+      return vector.unproject(camera);
+    }
+
+    function NewObject3D(x, y, z, obj) {
+      let New3D = new THREE.Object3D();
+      New3D.add(obj).position.set(x, y, z);
+      //let New3D = new THREE.Object3D().add(obj).position.set(x, y, z);
+      obj.geometry.center();
+      obj.rotation.x = THREE.Math.degToRad(-90);
+      obj.rotation.z = THREE.Math.degToRad(180);
+      return New3D;
+    }
+
+    function NewObject3D1(x, y, z, obj) {
+      let New3D = new THREE.Object3D();
+      New3D.add(obj).position.set(x, y, z);
+      //let New3D = new THREE.Object3D().add(obj).position.set(x, y, z);
+      obj.geometry.center();
+    }
+
+
+    //新增函数
+    function reFoundObjName(name) {
+      // 向父vue页面发送objName
+      window.parent.postMessage({
+        cmd: 'reFoundObjName',
+        params: {
+          objName: name
+        }
+      }, '*');
+    }
+
+    //鼠标单击设备事件
+    function reDeviceClick(name) {
+      // 向父vue页面发送信息
+      window.parent.postMessage({
+        cmd: 'reDeviceClick',
+        params: {
+          clickObjName:name
+        }
+      }, '*');
+    }
+
+    function cancelDevice() {
+      // 向父vue页面发送信息
+      window.parent.postMessage({
+        cmd: 'cancelDevice',
+        params: {
+          cancelDevice:true,
+        }
+      }, '*');
+    }
+
+    var html = '';
+    // 接受父页面发来的信息
+    window.addEventListener("message", function (event) {
+      var data = event.data;
+      switch (data.cmd) {
+        case 'sendDeviceInfoJson':
+          var jsonData = data.params.deviceInfoJson;
+          var str = '';
+          for (let i = 0; i < jsonData.length; i++) {
+            str += `<ul style="display: table-row">
+                          <li style="display: table-cell">${jsonData[i].tit}</li>
+                          <li style="display: table-cell;padding-left: 10px;color:#fff">${jsonData[i].val}</li>
+                        </ul>`
+          }
+          html = `<div style="position: absolute;top: 100px;z-index: 1000000;min-width: 190px;min-height:239px;background-color: #04152c;box-shadow: 0px 2px 4px 0px rgba(60, 150, 255, 0.35);border-radius: 4px;border: solid 1px #4789d6;">
+              <div style="display: table;padding: 10px;font-family: PingFangSC-Regular;font-size: 14px;line-height:44px;font-weight: normal;font-stretch: normal;letter-spacing: 0px;color: #4f648b;">
+
+              ${str}
+              <button type="button" style="background-color: #3a84ee;border-radius: 4px;border: solid 1px #1989fa;font-size: 14px;line-height: 1;color: #ffffff;padding:8px 20px;" onclick="changeLockvalue()">去关联</button>
+              </div>
+              </div>`;
+          console.log(html);
+          chagecss3Dspeite();
+          // 处理业务逻辑
+          break;
+        case 'initJsonObj':
+          jsonObj = data.params.jsonObj;
+          messageobj = data.params.messageobj;
+          threeStart();
+
+          break;
+        case 'changeDeviceState':
+          changeDevice(data.params.name, data.params.state);
+          break;
+      }
+    });
+
+  </script>
+</head>
+<body style="overflow: hidden" onload=''>
+<div id="canvas3d"></div>
+</body>
+</html>
+
+
+
