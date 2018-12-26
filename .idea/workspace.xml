@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5a358bab-dc83-4aba-bf75-b982395b7b10" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/static/bim3d/Web3D/Web3D - 副本.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/app.0c8158e46d6282b0fcecfa0f6e915d10.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/app.0c8158e46d6282b0fcecfa0f6e915d10.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/app.ff083a0b7d05da41594f.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/app.ff083a0b7d05da41594f.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/vendor.4348d42e14e43e932efa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/vendor.4348d42e14e43e932efa.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/Web3D.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/Web3D.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/device3D.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/device3D.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/123.gltf" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/123.gltf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/fengsan.stl" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/fengsan.stl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/hoteldevice.gltf" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/hoteldevice.gltf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/hotelmodel.gltf" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/hotelmodel.gltf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/negx.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/negx.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/negy.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/negy.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/negz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/negz.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/pointer.ico" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/pointer.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/posx.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/posx.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/posy.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/posy.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/posz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/posz.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/raindrop2flip.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/raindrop2flip.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/smokeparticle.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/smokeparticle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/snowflake.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/snowflake.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/spark.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/spark.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/spikey.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/spikey.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/star.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/star.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/test.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/test.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/model/zxc.gltf" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/model/zxc.gltf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/moon.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/moon.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/newbim.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/newbim.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/CSS3DRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/CSS3DRenderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/DDSLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/DDSLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/Detector.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/Detector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/FangSong_Regular.json" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/FangSong_Regular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/FirstPersonControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/FirstPersonControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/GLTFLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/GLTFLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/MTLLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/MTLLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/OBJLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/OBJLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/OrbitControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/OrbitControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/ParticleEngine.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/ParticleEngine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/ParticleEngineExamples.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/ParticleEngineExamples.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/STLLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/STLLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/Sky.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/Sky.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/Tween.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/Tween.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/ai.0.22.9-build00167.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/ai.0.22.9-build00167.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/ai.0.22.9-build00167.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/ai.0.22.9-build00167.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/dat.gui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/dat.gui.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/html2canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/html2canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/jquery-1.7.2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/jquery-1.7.2.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/jquery-1.8.2.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/jquery-1.8.2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/stats.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/stats.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/stats.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/stats.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/three.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/three.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/scripts/three.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/scripts/three.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/self.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/self.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bim3d/stone-wall.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/bim3d/stone-wall.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/PingFangSC-Light.148f3b3.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/PingFangSC-Light.148f3b3.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/PingFangSC-Medium.a39de04.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/PingFangSC-Medium.a39de04.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/PingFangSC-Regular.c42f2cf.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/PingFangSC-Regular.c42f2cf.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/element-icons.6f0a763.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/element-icons.6f0a763.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/iconfont.0b4f3cd.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/iconfont.0b4f3cd.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/iconfont.237253a.eot" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/iconfont.237253a.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/agent.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/agent.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/approval.13db3ee.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/approval.13db3ee.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/bg.3fe3232.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/bg.3fe3232.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/blueBg.4568270.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/blueBg.4568270.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/companyLogo.c12fd50.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/companyLogo.c12fd50.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/componentCommonBg.91d5c39.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/componentCommonBg.91d5c39.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/conditioning.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/conditioning.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/doorManage.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/doorManage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/electric-total.d640df8.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/electric-total.d640df8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/energy.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/energy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/equipment.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/equipment.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/exin.91553a7.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/exin.91553a7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/floor.749f0fa.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/floor.749f0fa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/floor1.62b452c.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/floor1.62b452c.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/floor2.c1981f0.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/floor2.c1981f0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/floor3.4ac9070.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/floor3.4ac9070.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/floor3D.44ec0ab.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/floor3D.44ec0ab.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/floor4.f4386c7.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/floor4.f4386c7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/floors.f3ddf85.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/floors.f3ddf85.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/floors_red.d056e36.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/floors_red.d056e36.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/fullBg.91d5c39.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/fullBg.91d5c39.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/gas-total.550033b.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/gas-total.550033b.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/greenBg.62ecd71.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/greenBg.62ecd71.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/icon_mark.a3139a2.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/icon_mark.a3139a2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/iconfont.5bdf111.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/iconfont.5bdf111.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/isno.4bf99e6.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/isno.4bf99e6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/isok.d41b9a7.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/isok.d41b9a7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/lengque.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/lengque.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/mai.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/mai.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/no.81bbe50.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/no.81bbe50.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/qing.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/qing.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/redBg.4967bfc.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/redBg.4967bfc.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/refuse.380bd58.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/refuse.380bd58.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/revenueData.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/revenueData.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/shuibeng.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/shuibeng.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/smallAlarm.e3f2734.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/smallAlarm.e3f2734.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/titIcon.e00403b.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/titIcon.e00403b.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/titlebg.b4460a1.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/titlebg.b4460a1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/topbg.0431603.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/topbg.0431603.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/usericon.e1eaf01.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/usericon.e1eaf01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/water-total.5a8f31b.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/water-total.5a8f31b.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/wu.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/wu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/xue.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/xue.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/yin.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/yin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/yu.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/yu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/zhuji.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/zhuji.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/manifest.3ad1d5771e9b13dbdad2.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/manifest.3ad1d5771e9b13dbdad2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/manifest.3ad1d5771e9b13dbdad2.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/manifest.3ad1d5771e9b13dbdad2.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/tableDemo.json" beforeDir="false" afterPath="$PROJECT_DIR$/static/tableDemo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/testVideo/flv.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/testVideo/flv.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/testVideo/h264-flv.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/testVideo/h264-flv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/testVideo/test1.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/testVideo/test1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/testVideo/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/testVideo/test2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/testVideo/test3.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/testVideo/test3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/testVideo/test4.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/testVideo/test4.html" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-71051009">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5a358bab-dc83-4aba-bf75-b982395b7b10" name="Default Changelist" comment="" />
+      <created>1545839418634</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1545839418634</updated>
+      <workItem from="1545839419826" duration="157000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="157000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+</project>
