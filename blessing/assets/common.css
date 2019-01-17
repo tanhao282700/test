@@ -43,7 +43,7 @@ button {
 
 .mainPage{
   width:100%;
-  height:12.06rem;
+  height:100%;
   background:url(../imgs/bg.jpg) no-repeat left top;
   background-size:100% 100%;
   display: flex;
@@ -317,7 +317,9 @@ input::-webkit-input-placeholder {
   height:0.38rem;
 }
 
-
+.send{
+  height:12.06rem;
+}
 .send .button{
   width:2.4rem;
   height:0.8rem;
