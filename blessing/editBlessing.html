@@ -55,10 +55,12 @@
     $(".button").click(function(){
         if(!$(".otName").val()){
             alert('请输入对方姓名')
+            $(".otName").focus()
             return
         }
         if(!$(".myName").val()){
             alert('请输入你的名字')
+            $(".myName").focus()
             return
         }
         sessionStorage.setItem('firstLine',$(".firstSelect").val()+'的'+$(".otName").val())

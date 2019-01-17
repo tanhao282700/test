@@ -29,6 +29,11 @@
 
 
     $(".button").click(function(){
+        if(!$("textarea").val()){
+            alert('请输入祝福语')
+            $("textarea").focus()
+            return
+        }
         sessionStorage.setItem('content',$(".cont").val())
         window.location.href="./send.html"
     })
