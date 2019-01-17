@@ -53,6 +53,14 @@
 </body>
 <script>
     $(".button").click(function(){
+        if(!$(".otName").val()){
+            alert('请输入对方姓名')
+            return
+        }
+        if(!$(".myName").val()){
+            alert('请输入你的名字')
+            return
+        }
         sessionStorage.setItem('firstLine',$(".firstSelect").val()+'的'+$(".otName").val())
         sessionStorage.setItem('lastLine',$(".seconedSelect").val()+'的'+$(".myName").val())
         window.location.href="./selectText.html"
