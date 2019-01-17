@@ -89,6 +89,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 .editBlessing .line{
   height:0.51rem;
@@ -160,6 +161,8 @@ button {
   color:white;
   font-size:0.29rem;
   text-align: center;
+  padding: 0;
+  line-height: 0.51rem;
 }
 input::-webkit-input-placeholder {
   /* placeholder颜色  */
@@ -326,6 +329,10 @@ input::-webkit-input-placeholder {
 .send .button img{
   width:1.76rem;
   height:0.39rem;
+}
+.send .textArea{
+  height:auto;
+  margin-top:6.8rem;
 }
 .send .lead{
   position:absolute;

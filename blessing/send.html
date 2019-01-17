@@ -16,7 +16,8 @@
         <p class="firL"></p>
         <!--<p>新的一年，祝福你</p>
         <p>“猪”事顺利，天天开心！</p>-->
-        <pre style="margin:0;line-height:0.48rem;"></pre>
+        <!--<pre style="margin:0;line-height:0.48rem;"></pre>-->
+        <textarea style="margin-left:0.69rem;height:1.26rem;width:5.19rem;border:none;background:none;font-size: 0.29rem;line-height: 0.58rem;" readonly></textarea>
         <p class="lasL"></p>
     </div>
     <div class="img">
@@ -32,7 +33,7 @@
 <script>
     $(".firL").text(sessionStorage.getItem('firstLine'))
     $(".lasL").text(sessionStorage.getItem('lastLine'))
-    $("pre").html(sessionStorage.getItem('content'))
+    $("textarea").html(sessionStorage.getItem('content'))
     $(".img img").attr('src','./imgs/'+sessionStorage.getItem('thisIndex')+'t.png')
 
 
