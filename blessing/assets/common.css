@@ -326,6 +326,7 @@ input::-webkit-input-placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top:1rem;
 }
 .send .button img{
   width:1.76rem;
