@@ -43,7 +43,7 @@ button {
 
 .mainPage{
   width:100%;
-  height:100%;
+  height:12.06rem;
   background:url(../imgs/bg.jpg) no-repeat left top;
   background-size:100% 100%;
   display: flex;
@@ -83,7 +83,7 @@ button {
 
 .editBlessing{
   width:100%;
-  height:100%;
+  height:12.06rem;
   background:url(../imgs/seconedbg.jpg) no-repeat left top;
   background-size:100% 100%;
   display: flex;
@@ -100,7 +100,7 @@ button {
   color: #2c0000;
 }
 .editBlessing .firstLine{
-  margin-top:5.3rem;
+  margin-top:4.7rem;
 }
 .editBlessing .seconedLine{
   margin-top:0.66rem;
@@ -170,13 +170,13 @@ input::-webkit-input-placeholder {
   height:0.68rem;
   background:url(../imgs/nextStep.jpg) no-repeat left top;
   background-size:100% 100%;
-  margin-top:1.4rem;
+  margin-top:1.2rem;
 }
 
 
 .selectPage{
   width:100%;
-  height:100%;
+  height:12.06rem;
   background:url(../imgs/thirdbg.jpg) no-repeat left top;
   background-size:100% 100%;
   display: flex;
@@ -195,19 +195,19 @@ input::-webkit-input-placeholder {
 }
 .selectPage .firstText{
   left:0.96rem;
-  top:3.98rem;
+  top:3.63rem;
 }
 .selectPage .seconedText{
-  top:3.98rem;
+  top:3.63rem;
   right:0.96rem;
 }
 .selectPage .thirdText{
   left:0.96rem;
-  top:7.7rem;
+  top:6.96rem;
 }
 .selectPage .fourthText{
   right:0.96rem;
-  top:7.7rem;
+  top:6.96rem;
 }
 .selectPage .handOne{
   width:0.58rem;
@@ -260,7 +260,7 @@ input::-webkit-input-placeholder {
 
 .makeout{
   width:100%;
-  height:100%;
+  height:12.06rem;
   background:url(../imgs/fourthbg.png) no-repeat left top;
   background-size:100% 100%;
   display: flex;
@@ -270,10 +270,10 @@ input::-webkit-input-placeholder {
 }
 .makeout .text{
   width:5.63rem;
-  height:3.7rem;
+  height:3.4rem;
   background:url(../imgs/squar.png) no-repeat left top;
   background-size:100% 100%;
-  margin-top:4.46rem;
+  margin-top:4.05rem;
   padding:0 0.24rem;
   box-sizing: border-box;
   color: #141414;
@@ -303,7 +303,7 @@ input::-webkit-input-placeholder {
   height:0.77rem;
   background:url(../imgs/buttonbg.png) no-repeat left top;
   background-size:100% 100%;
-  margin-top:1.08rem;
+  margin-top:0.95rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -345,7 +345,7 @@ input::-webkit-input-placeholder {
   height:1.84rem;
   position:absolute;
   left: 2.64rem;
-  top: 4.8rem;
+  top: 4.24rem;
   z-index:1;
 }
 .img img{
