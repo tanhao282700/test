@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>送祝福</title>
+    <script src="assets/resetFontSize.js"></script>
+    <script src="assets/jq.js"></script>
+    <link rel="stylesheet" href="assets/common.css">
+</head>
+<body>
+<div class="makeout">
+    <div class="text">
+        <p class="firL"></p>
+        <textarea class="cont"></textarea>
+        <p class="lasL">感谢你的柠檬</p>
+    </div>
+    <div class="button">
+        <img src="./imgs/t.png" alt="">
+    </div>
+</div>
+<!-- 脚本文件 -->
+
+</body>
+<script>
+    $(".firL").text(sessionStorage.getItem('firstLine'))
+    $(".lasL").text(sessionStorage.getItem('lastLine'))
+
+
+    $(".button").click(function(){
+        sessionStorage.setItem('content',$(".cont").val())
+        window.location.href="./send.html"
+    })
+</script>
+</html>
