@@ -18,7 +18,8 @@
        webkit-playsinline="true"
        playsinline="true"
        controls="controls"
-       preload="preload"></video >
+       preload="preload"
+       autoplay></video >
 
 <!--<video id="video-android" src="./assets/bless.mp4" style="position:absolute;width:100%;height:100%;"
        x5-video-player-type="h5"
@@ -58,8 +59,6 @@
     if (ua.indexOf("iPhone") > 0) {
         $("#video").attr('controls','')
         $("#video")[0].play()
-        var viIos = document.getElementById('video')
-        viIos.play();
     } else if (ua.indexOf("Android") > 0) {
 
         /*console.log('Android')
