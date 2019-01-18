@@ -17,6 +17,13 @@
        x5-video-player-fullscreen="true"
        webkit-playsinline="true"
        playsinline="true"
+       preload="preload"></video >
+
+<video id="video-android" src="./assets/bless.mp4" style="position:absolute;width:100%;height:100%;"
+       x5-video-player-type="h5"
+       x5-video-player-fullscreen="true"
+       webkit-playsinline="true"
+       playsinline="true"
        controls="controls"
        preload="preload"></video >
 
@@ -46,11 +53,26 @@
     }, false);*/
 
     var ua = navigator.userAgent;
-    var vi = document.getElementById('video');
+
     if (ua.indexOf("iPhone") > 0) {
-        console.log('iphone')
-        vi.play();
+        $("#video")[0].addEventListener('ended', function () {
+            $("#video").hide()
+            $(".mainPage").removeClass("scs-hide")
+        }, false);
+        $("#video-android").addClass('scs-hide')
+        var viIos = document.getElementById('video')
+        viIos.play();
     } else if (ua.indexOf("Android") > 0) {
+        $("#video-android")[0].addEventListener('ended', function () {
+            $("#video-android").hide()
+            $(".mainPage").removeClass("scs-hide")
+        }, false);
+        $("#video").addClass('scs-hide')
+        var viAndroid = document.getElementById('video-android');
+        $("body")[0].addEventListener('click',function(){
+            viAndroid.play();
+        })
+        $("body").click()
         /*console.log('Android')
         vi.play();
         if (vi.currentTime === 0) {
@@ -59,9 +81,7 @@
         }*/
     }
 
-    $("body")[0].addEventListener('touchstart',function(){
-        vi.play();
-    })
+
     /*document.addEventListener("WeixinJSBridgeReady", function onBridgeReady() {
         if (ua.indexOf("iPhone") > 0) {
             console.log('iphone')
@@ -82,9 +102,9 @@
         window.location.href="./editBlessing.html"
     })
 
-    $("#video")[0].addEventListener('ended', function () {
+    /*$("#video")[0].addEventListener('ended', function () {
         $("#video").hide()
         $(".mainPage").removeClass("scs-hide")
-    }, false);
+    }, false);*/
 </script>
 </html>
