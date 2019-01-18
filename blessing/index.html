@@ -13,7 +13,7 @@
     var ua = navigator.userAgent;
     if (ua.indexOf("iPhone") > 0) {
         window.location.href='iosindex.html'
-    } else {
+    } else if (ua.indexOf("Android") > 0) {
         window.location.href='androidindex.html'
     }
 </script>
