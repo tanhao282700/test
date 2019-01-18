@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>送祝福</title>
+    <script src="assets/resetFontSize.js"></script>
+    <script src="assets/jq.js"></script>
+    <!-- 必须加在微信api资源 -->
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+<video class="video-box j_video_box" id="video"
+       width="100%" hight="100%"
+       src="./assets/bless.mp4"
+       x5-video-player-type="h5"
+       x5-video-player-fullscreen="true"
+       webkit-playsinline="true"
+       playsinline="true"
+       preload="auto"
+       autoplay ></video>
+</body>
+<script>
+    $("#video")[0].addEventListener('ended', function () {
+
+    }, false);
+
+    //一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以
+    document.getElementById("#video").play();
+    //必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        document.getElementById('video').play();
+    }, false);
+
+</script>
+</html>
