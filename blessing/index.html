@@ -45,8 +45,17 @@
         document.getElementById('video').play();
     }, false);*/
 
-    wx.ready(function() {
-        document.getElementById('video').play();//video标签id=media
+    var ua = navigator.userAgent;
+    var vi = document.getElementById('video'); document.addEventListener("WeixinJSBridgeReady", function onBridgeReady() {
+        if (ua.indexOf("iPhone") > 0) {
+            vi.play();
+        } else if (ua.indexOf("Android") > 0) {
+            vi.play();
+            if (vi.currentTime === 0) {
+                //这里的定时器你可以不需要，也可以变成你需要的事件，而且也不一定在这个位置，主要是里面的play
+                vi.play();
+            }
+        }
     });
 
 
