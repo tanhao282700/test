@@ -59,7 +59,7 @@
             $("#video").hide()
             $(".mainPage").removeClass("scs-hide")
         }, false);
-        $("#video-android").addClass('scs-hide')
+        $("#video-android").remove()
         var viIos = document.getElementById('video')
         viIos.play();
     } else if (ua.indexOf("Android") > 0) {
@@ -67,7 +67,7 @@
             $("#video-android").hide()
             $(".mainPage").removeClass("scs-hide")
         }, false);
-        $("#video").addClass('scs-hide')
+        $("#video").remove()
         var viAndroid = document.getElementById('video-android');
         $("body")[0].addEventListener('click',function(){
             viAndroid.play();
