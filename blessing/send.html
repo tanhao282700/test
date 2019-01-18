@@ -14,7 +14,7 @@
     <div class="lead scs-hide"></div>
     <div class="textArea">
         <p class="firL"></p>
-        <textarea disabled readonly></textarea>
+        <pre disabled readonly></pre>
         <p style="line-height: 0;" class="lasL"></p>
     </div>
     <div class="img">
@@ -30,7 +30,7 @@
 <script>
     $(".firL").text(sessionStorage.getItem('firstLine'))
     $(".lasL").text(sessionStorage.getItem('lastLine'))
-    $("textarea").html(sessionStorage.getItem('content'))
+    $("pre").html(sessionStorage.getItem('content'))
     $(".img img").attr('src','./imgs/'+sessionStorage.getItem('thisIndex')+'t.png')
 
 

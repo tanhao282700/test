@@ -378,7 +378,7 @@ input::-webkit-input-placeholder {
   height:auto;
   margin-top:6.8rem;
 }
-.send .textArea textarea{
+.send .textArea pre{
   text-align: center;
   color:#141414!important;
   margin:0.1rem 0;
