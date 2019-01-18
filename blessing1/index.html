@@ -6,7 +6,6 @@
           content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <title>送祝福</title>
     <script src="assets/resetFontSize.js"></script>
-    <script src="assets/jsmpeg.min.js"></script>
     <script src="assets/jq.js"></script>
     <!-- 必须加在微信api资源 -->
     <script src="./assets/jweixin-1.3.2.js"></script>
@@ -18,7 +17,8 @@
        x5-video-player-fullscreen="true"
        webkit-playsinline="true"
        playsinline="true"
-       preload="auto"></video >
+       controls="controls"
+       preload="preload"></video >
 
     <div class="mainPage scs-hide">
         <div class="textArea">
@@ -46,17 +46,35 @@
     }, false);*/
 
     var ua = navigator.userAgent;
-    var vi = document.getElementById('video'); document.addEventListener("WeixinJSBridgeReady", function onBridgeReady() {
+    var vi = document.getElementById('video');
+    if (ua.indexOf("iPhone") > 0) {
+        console.log('iphone')
+        vi.play();
+    } else if (ua.indexOf("Android") > 0) {
+        /*console.log('Android')
+        vi.play();
+        if (vi.currentTime === 0) {
+            //这里的定时器你可以不需要，也可以变成你需要的事件，而且也不一定在这个位置，主要是里面的play
+            vi.play();
+        }*/
+    }
+
+    $("body")[0].addEventListener('touchstart',function(){
+        vi.play();
+    })
+    /*document.addEventListener("WeixinJSBridgeReady", function onBridgeReady() {
         if (ua.indexOf("iPhone") > 0) {
+            console.log('iphone')
             vi.play();
         } else if (ua.indexOf("Android") > 0) {
+            console.log('Android')
             vi.play();
             if (vi.currentTime === 0) {
                 //这里的定时器你可以不需要，也可以变成你需要的事件，而且也不一定在这个位置，主要是里面的play
                 vi.play();
             }
         }
-    });
+    });*/
 
 
 
