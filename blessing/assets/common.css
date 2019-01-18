@@ -354,6 +354,7 @@ input::-webkit-input-placeholder {
 
 .send{
   height:12.06rem;
+  position:static;
 }
 .send .button{
   width:2.4rem;
@@ -372,6 +373,20 @@ input::-webkit-input-placeholder {
 .send .textArea{
   height:auto;
   margin-top:6.8rem;
+}
+.send .textArea textarea{
+  text-align: center;
+  color:#141414!important;
+  margin:0.1rem 0;
+  padding-bottom:0;
+  overflow:hidden;
+  margin-left:0.69rem;
+  height:1.26rem;
+  width:5.19rem;
+  border:none;
+  background:none;
+  font-size: 0.29rem;
+  line-height: 0.58rem;
 }
 .send .lead{
   position:absolute;
