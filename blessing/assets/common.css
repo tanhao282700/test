@@ -89,7 +89,8 @@ button {
 
 .editBlessing{
   width:100%;
-  height:12.06rem;
+  height:100%;
+  min-height:12.06rem;
   background:url(../imgs/seconedbg.jpg) no-repeat left top;
   background-size:100% 100%;
   display: flex;
@@ -213,7 +214,8 @@ input::-webkit-input-placeholder {
 
 .selectPage{
   width:100%;
-  height:12.06rem;
+  height:100%;
+  min-height:12.06rem;
   background:url(../imgs/thirdbg.jpg) no-repeat left top;
   background-size:100% 100%;
   display: flex;
@@ -297,7 +299,8 @@ input::-webkit-input-placeholder {
 
 .makeout{
   width:100%;
-  height:12.06rem;
+  height:100%;
+  min-height:12.06rem;
   background:url(../imgs/fourthbg.png) no-repeat left top;
   background-size:100% 100%;
   display: flex;
@@ -353,7 +356,8 @@ input::-webkit-input-placeholder {
 }
 
 .send{
-  height:12.06rem;
+  height:100%;
+  min-height:12.06rem;
   position:static;
 }
 .send .button{
