@@ -349,6 +349,7 @@ input::-webkit-input-placeholder {
   margin:0.1rem 0;
   font-size:0.29rem;
   line-height:0.58rem;
+  text-align: center;
   color:#141414;
 }
 .makeout .button{
