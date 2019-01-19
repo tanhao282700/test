@@ -30,7 +30,6 @@
 <script type="application/javascript">
     $(".firL").text(sessionStorage.getItem('firstLine'))
     $(".lasL").text(sessionStorage.getItem('lastLine'))
-    $("textarea").html('新的一年，祝福你\n“猪”事顺利，天天开心！')
 
 
    /* window.onload = function(){
@@ -40,6 +39,7 @@
    $(".init").click(function(){
        $(".init").addClass('scs-hide')
        $("textarea").removeClass('scs-hide')
+       $("textarea").html('新的一年，祝福你\n“猪”事顺利，天天开心！')
        /*$("textarea").select()*/
        $("textarea").focus()
    })
@@ -50,7 +50,7 @@
             $("textarea").focus()
             return
         }
-        sessionStorage.setItem('content',$(".cont").val())
+        sessionStorage.setItem('content',$("textarea").val())
         window.location.href="./send.html"
     })
 </script>
