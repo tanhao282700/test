@@ -13,7 +13,7 @@
 <div class="makeout">
     <div class="text">
         <p class="firL"></p>
-        <textarea class="cont"></textarea>
+        <textarea rows="2" class="cont"></textarea>
         <p class="lasL">感谢你的柠檬</p>
     </div>
     <div class="button">
@@ -27,6 +27,7 @@
     $(".firL").text(sessionStorage.getItem('firstLine'))
     $(".lasL").text(sessionStorage.getItem('lastLine'))
     $("textarea").val('新的一年，祝福你\n“猪”事顺利，天天开心！')
+    $("textarea").select()
 
     $(".button").click(function(){
         if(!$("textarea").val()){
