@@ -36,7 +36,10 @@
             $("textarea").select()
     }*/
 
+   var clickIndex = 0
+
    $(".init").click(function(){
+       clickIndex++
        $(".init").addClass('scs-hide')
        $("textarea").removeClass('scs-hide')
        $("textarea").html('新的一年，祝福你\n“猪”事顺利，天天开心！')
@@ -45,12 +48,16 @@
    })
 
     $(".button").click(function(){
-        if(!$("textarea").val()){
-            alert('请输入祝福语')
-            $("textarea").focus()
-            return
+        if(clickIndex === 0){
+            sessionStorage.setItem('content','新的一年，祝福你\n“猪”事顺利，天天开心！')
+        }else{
+            if(!$("textarea").val()){
+                alert('请输入祝福语')
+                $("textarea").focus()
+                return
+            }
+            sessionStorage.setItem('content',$("textarea").val())
         }
-        sessionStorage.setItem('content',$("textarea").val())
         window.location.href="./send.html"
     })
 </script>
