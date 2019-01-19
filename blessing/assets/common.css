@@ -337,6 +337,24 @@ input::-webkit-input-placeholder {
   text-align: center;
   color:gray;
 }
+.makeout .text textarea::after{
+  content:' ';
+  display: inline-block;
+  width: 100px;
+  height:105px;
+  animation: blink 1s infinite steps(1, start);
+}
+/*这里设置动画blink*/
+@keyframes blink {
+  0%, 100% {
+    background-color: #000;
+    color: #aaa;
+  }
+  50% {
+    background-color: #bbb; /* not #aaa because it's seem there is Google Chrome bug */
+    color: #000;
+  }
+}
 .makeout .button{
   width:2.3rem;
   height:0.77rem;
