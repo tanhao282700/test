@@ -33,7 +33,9 @@
         $("textarea").focus()
     })
     window.onload = function(){
-        $(".initClick").click()
+        setTimeout(function(){
+            $(".initClick").click()
+        },500)
             /*$("textarea").select()*/
             /*$(".initClick").click()
             var evt = document.createEvent("MouseEvents");
