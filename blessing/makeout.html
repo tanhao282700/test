@@ -11,10 +11,10 @@
 </head>
 <body>
 <div class="makeout">
-    <div class="initClick" style="opacity:0;z-index:-1;width:.5rem;height:.5rem;position:absolute;background:pink;left:5.8rem;top:5.8rem;"></div>
+    <div class="initClick" style="z-index:1;width:.5rem;height:.5rem;position:absolute;background:pink;left:5.8rem;top:5.8rem;"></div>
     <div class="text">
         <p class="firL"></p>
-        <textarea rows="2" class="cont"></textarea>
+        <textarea focus="true" rows="2" class="cont"></textarea>
         <p class="lasL">感谢你的柠檬</p>
     </div>
     <div class="button">
@@ -30,13 +30,13 @@
     $("textarea").val('新的一年，祝福你\n“猪”事顺利，天天开心！')
     /*$("textarea").select()*/
 
-    window.onload = function(){
+    /*window.onload = function(){
             $("textarea").select()
             $(".initClick").click()
             var evt = document.createEvent("MouseEvents");
             evt.initMouseEvent("click", true, true, window, 0, 0, 0, parseInt($(".initClick").css('left')), parseInt($(".initClick").css('left')), false, false, false, false, 0, null);
             document.body.dispatchEvent(evt);
-    }
+    }*/
 
     $(".button").click(function(){
         if(!$("textarea").val()){
