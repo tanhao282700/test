@@ -70,23 +70,28 @@
         }*!/
     }*/
 
-
-    document.addEventListener("WeixinJSBridgeReady", function onBridgeReady() {
+    /*document.addEventListener("WeixinJSBridgeReady", function onBridgeReady() {
         $("#video")[0].play()
         $("#bgmusic").play()
-        /*if (ua.indexOf("iPhone") > 0) {
+    });*/
+
+    function autoPlayAudio1() {
+        wx.config({
+            // 配置信息, 即使不正确也能使用 wx.ready
+            debug: false,
+            appId: '',
+            timestamp: 1,
+            nonceStr: '',
+            signature: '',
+            jsApiList: []
+        });
+        wx.ready(function() {
             $("#video")[0].play()
-        } else if (ua.indexOf("Android") > 0) {
-            console.log('Android')
-            vi.play();
-            if (vi.currentTime === 0) {
-                //这里的定时器你可以不需要，也可以变成你需要的事件，而且也不一定在这个位置，主要是里面的play
-                vi.play();
-            }
-        }*/
-    });
+            $("#bgmusic").play()
+        });
+    }
 
-
+    autoPlayAudio1()
 
     $(".button").click(function(){
         window.location.href="./editBlessing.html"
