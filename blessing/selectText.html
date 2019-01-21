@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>送祝福</title>
+    <script src="assets/resetFontSize.js"></script>
+    <script src="assets/jq.js"></script>
+    <link rel="stylesheet" href="assets/common.css">
+</head>
+<body>
+<div class="selectPage">
+    <div class="firstText text">
+        <img src="./imgs/1.jpg" alt="">
+    </div>
+    <div class="seconedText text">
+        <img src="./imgs/2.jpg" alt="">
+    </div>
+    <div class="thirdText text">
+        <img src="./imgs/3.jpg" alt="">
+    </div>
+    <div class="fourthText text">
+        <img src="./imgs/4.jpg" alt="">
+    </div>
+
+    <div class="sele seleOne hide">
+        <img src="imgs/4t.png" alt="">
+    </div>
+    <div class="sele seleTwo hide">
+        <img src="imgs/5t.png" alt="">
+    </div>
+    <div class="sele seleThree hide">
+        <img src="imgs/4t.png" alt="">
+    </div>
+    <div class="sele seleFour hide">
+        <img src="imgs/4t.png" alt="">
+    </div>
+
+    <div class="shadow scs-hide"></div>
+
+    <div class="button">
+        <img src="./imgs/nextStep.jpg" alt="">
+    </div>
+</div>
+<!-- 脚本文件 -->
+
+</body>
+<script>
+    $(".sele").click(function(){
+        $(".shadow").removeClass('scs-hide')
+        $(".sele").addClass("hide")
+        $($(".sele")[$(this).index()-4]).removeClass("hide")
+    })
+
+    $(".button").click(function(){
+        var thisIndex = $(".sele:not('.hide')").index()
+        console.log(thisIndex)
+        if(thisIndex>0){
+            sessionStorage.setItem('thisIndex',thisIndex)
+            window.location.href="./makeout.html"
+        }else{
+            alert('请选择祝福春联！')
+        }
+    })
+</script>
+</html>
