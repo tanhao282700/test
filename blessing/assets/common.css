@@ -266,6 +266,7 @@ input::-webkit-input-placeholder {
   justify-content: center;
   align-items: center;
 }
+.sele{-webkit-tap-highlight-color:transparent;}
 .selectPage .sele img{
   width: .45rem;
   height: 2.1rem;
