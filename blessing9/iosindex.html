@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="assets/common.css">
 </head>
 <body>
-<video id="video" src="./assets/bless.mp4" style="z-index:1;position:absolute;width:100%;height:100%;"
+<!--<video id="video" src="./assets/bless.mp4" style="z-index:1;position:absolute;width:100%;height:100%;"
        x5-video-player-type="h5"
        x5-video-player-fullscreen="true"
        webkit-playsinline="true"
        playsinline="true"
        preload="preload"
-       autoplay></video >
+       autoplay></video >-->
 
 
 
@@ -29,7 +29,7 @@
         <div class="tiaoguo">
             跳过
         </div>
-        <div class="mainPageBox scs-hide">
+        <div class="mainPageBox">
             <div class="textArea">
                 <p>ios亲爱的______</p>
                 <p>新的一年，祝福你</p>
@@ -63,7 +63,7 @@
         $(".mainPageBox").removeClass("scs-hide")
     })
 
-    function autoPlayAudio1() {
+    /*function autoPlayAudio1() {
         wx.config({
             // 配置信息, 即使不正确也能使用 wx.ready
             debug: false,
@@ -80,6 +80,7 @@
     }
     autoPlayAudio1()
     document.addEventListener('DOMContentLoaded', function () {
+        alert(33)
         $("#video")[0].play()
     });
 
@@ -101,7 +102,7 @@
             document.getElementById('video').play();
         }
     },100)
-    time()
+
 
 
     //--创建触摸监听，当浏览器打开页面时，触摸屏幕触发事件，进行音频播放
@@ -112,16 +113,16 @@
     document.addEventListener('touchstart', audioAutoPlay);
     function playBgMusic(){
         document.getElementById('video').play();
-    }
+    }*/
     /*autoPlayAudio1()*/
 
     $(".button").click(function(){
         window.location.href="./editBlessing.html"
     })
-    $("#video")[0].addEventListener('ended', function () {
+    /*$("#video")[0].addEventListener('ended', function () {
         $("#video").hide()
         $(".tiaoguo").hide()
         $(".mainPageBox").removeClass("scs-hide")
-    }, false);
+    }, false);*/
 </script>
 </html>
