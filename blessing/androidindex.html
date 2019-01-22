@@ -20,71 +20,58 @@
        preload="preload"
        controls="controls"
        ></video >
-<div class="mainPage scs-hide">
-    <div class="textArea">
-        <p>亲爱的______</p>
-        <p>新的一年，祝福你</p>
-        <p>“猪”事顺利，天天开心！</p>
-        <p>感谢你的Oracle</p>
+<div class="mainPage">
+    <div class="bgMusicIcon">
+        <img src="./imgs/play.jpg" alt="">
     </div>
-    <div class="img">
-        <img src="./imgs/4t.png" alt="">
+    <div class="tiaoguo">
+        跳过
     </div>
-    <div class="button"></div>
+    <div class="mainPageBox scs-hide">
+        <div class="textArea">
+            <p>亲爱的______</p>
+            <p>新的一年，祝福你</p>
+            <p>“猪”事顺利，天天开心！</p>
+            <p>感谢你的Oracle</p>
+        </div>
+        <div class="img">
+            <img src="./imgs/4t.png" alt="">
+        </div>
+        <div class="button"></div>
+    </div>
 </div>
 <!-- 脚本文件 -->
 
 </body>
 <script>
-    //一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以
-    /*document.getElementById('video').addEventListener('durationchange',function(){
-     document.getElementById('video').play();
-     })
-     //必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效
-     document.addEventListener("WeixinJSBridgeReady", function () {
-     document.getElementById('video').play();
-     }, false);*/
+    $(".bgMusicIcon").click(function(){
+        if(window.parent.isPlay){
+            $(".bgMusicIcon img").attr('src','./imgs/stop.jpg')
+        }else{
+            $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
+        }
+        window.parent.playBgMusic(!window.parent.isPlay)
+    })
 
-    /*var ua = navigator.userAgent;*/
-
-    /*if (ua.indexOf("iPhone") > 0) {
-     $("#video").attr('controls','')
-     $("#video")[0].play()
-     } else if (ua.indexOf("Android") > 0) {
-
-     /!*console.log('Android')
-     vi.play();
-     if (vi.currentTime === 0) {
-     //这里的定时器你可以不需要，也可以变成你需要的事件，而且也不一定在这个位置，主要是里面的play
-     vi.play();
-     }*!/
-     }*/
-
-
-    /*document.addEventListener("WeixinJSBridgeReady", function onBridgeReady() {
-        if (ua.indexOf("iPhone") > 0) {
-         $("#video")[0].play()
-         } else if (ua.indexOf("Android") > 0) {
-         console.log('Android')
-         vi.play();
-         if (vi.currentTime === 0) {
-         //这里的定时器你可以不需要，也可以变成你需要的事件，而且也不一定在这个位置，主要是里面的play
-         vi.play();
-         }
-         }
-    });*/
-
-
-
-
+    $(".tiaoguo").click(function(){
+        $("#video").hide()
+        $(".tiaoguo").hide()
+        $(".mainPageBox").removeClass("scs-hide")
+    })
     $(".button").click(function(){
         window.location.href="./editBlessing.html"
     })
 
     $("#video")[0].addEventListener('ended', function () {
-        $(".moni").hide()
         $("#video").hide()
-        $(".mainPage").removeClass("scs-hide")
+        $(".tiaoguo").hide()
+        $(".mainPageBox").removeClass("scs-hide")
     }, false);
+
+    
+
+
+
+
 </script>
 </html>

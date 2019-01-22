@@ -42,11 +42,27 @@
     <div class="button">
         <img src="./imgs/nextStep.jpg" alt="">
     </div>
+    <div class="bgMusicIcon">
+        <img src="./imgs/play.jpg" alt="">
+    </div>
 </div>
 <!-- 脚本文件 -->
 
 </body>
 <script>
+    if(window.parent.isPlay){
+        $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
+    }else{
+        $(".bgMusicIcon img").attr('src','./imgs/stop.jpg')
+    }
+    $(".bgMusicIcon").click(function(){
+        if(window.parent.isPlay){
+            $(".bgMusicIcon img").attr('src','./imgs/stop.jpg')
+        }else{
+            $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
+        }
+        window.parent.playBgMusic(!window.parent.isPlay)
+    })
     $(".sele").click(function(){
         $(".shadow").removeClass('scs-hide')
         $(".sele").addClass("hide")

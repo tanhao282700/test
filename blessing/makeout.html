@@ -23,11 +23,27 @@
     <div class="button">
         <img src="./imgs/t.png" alt="">
     </div>
+    <div class="bgMusicIcon">
+        <img src="./imgs/play.jpg" alt="">
+    </div>
 </div>
 <!-- 脚本文件 -->
 
 </body>
 <script type="application/javascript">
+    if(window.parent.isPlay){
+        $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
+    }else{
+        $(".bgMusicIcon img").attr('src','./imgs/stop.jpg')
+    }
+    $(".bgMusicIcon").click(function(){
+        if(window.parent.isPlay){
+            $(".bgMusicIcon img").attr('src','./imgs/stop.jpg')
+        }else{
+            $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
+        }
+        window.parent.playBgMusic(!window.parent.isPlay)
+    })
     $(".firL").text(sessionStorage.getItem('firstLine'))
     $(".lasL").text(sessionStorage.getItem('lastLine'))
 

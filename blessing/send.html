@@ -11,23 +11,41 @@
 </head>
 <body>
 <div class="mainPage send">
-    <div class="lead scs-hide"></div>
-    <div class="textArea">
-        <p class="firL"></p>
-        <pre disabled readonly></pre>
-        <p class="lasL"></p>
+    <div class="mainPageBox">
+        <div class="lead scs-hide"></div>
+        <div class="textArea">
+            <p class="firL"></p>
+            <pre disabled readonly></pre>
+            <p class="lasL"></p>
+        </div>
+        <div class="img">
+            <img src="./imgs/4t.png" alt="">
+        </div>
+        <div class="button">
+            <img src="./imgs/sure.png" alt="">
+        </div>
     </div>
-    <div class="img">
-        <img src="./imgs/4t.png" alt="">
-    </div>
-    <div class="button">
-        <img src="./imgs/sure.png" alt="">
+    <div class="bgMusicIcon">
+        <img src="./imgs/play.jpg" alt="">
     </div>
 </div>
 <!-- 脚本文件 -->
 
 </body>
 <script>
+    if(window.parent.isPlay){
+        $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
+    }else{
+        $(".bgMusicIcon img").attr('src','./imgs/stop.jpg')
+    }
+    $(".bgMusicIcon").click(function(){
+        if(window.parent.isPlay){
+            $(".bgMusicIcon img").attr('src','./imgs/stop.jpg')
+        }else{
+            $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
+        }
+        window.parent.playBgMusic(!window.parent.isPlay)
+    })
     $(".firL").text(sessionStorage.getItem('firstLine')) //称呼
     $(".lasL").text(sessionStorage.getItem('lastLine'))  //我的名字
     $("pre").html(sessionStorage.getItem('content'))  //祝福语

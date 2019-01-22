@@ -14,6 +14,7 @@ body {
   width: 100%;
   height: 100%;
   font-size: 12px;
+  background:#ffffff;
   font-family: "SourceHanSansCN-Regular", "PingFang SC", "SourceHanSansCN";
 }
 body {
@@ -41,6 +42,32 @@ button {
   background: transparent;
 }
 
+.bgMusicIcon{
+  position:absolute;
+  width:0.56rem;
+  height:0.55rem;
+  border-radius:0.55rem;
+  right:0.6rem;
+  top:0.58rem;
+  overflow: hidden;
+}
+.bgMusicIcon img{
+  width:100%;
+  height:100%;
+}
+.tiaoguo{
+  width:0.82rem;
+  height:0.35rem;
+  text-align: center;
+  line-height:0.35rem;
+  background-color: #aaaaaa;
+  border-radius: 0.04rem;
+  color:white;
+  opacity: 0.73;
+  position:absolute;
+  right:0.76rem;
+  bottom:0.4rem;
+}
 .mainPage{
   width:100%;
   height:12.06rem;
@@ -50,6 +77,10 @@ button {
   top:0;
   bottom:0;
   margin:auto;
+}
+.mainPageBox{
+  width:100%;
+  height:100%;
   background:url(../imgs/bg.jpg) no-repeat left top;
   background-size:100% 100%;
   display: flex;
