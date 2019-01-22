@@ -55,6 +55,7 @@
 
 </body>
 <script>
+    console.log($(window.parent.document.getElementsByClassName('iframeBox')[0]).css({"position":'static'}))
     if(window.parent.isPlay){
         $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
     }else{
