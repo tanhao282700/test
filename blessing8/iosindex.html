@@ -74,14 +74,26 @@
             jsApiList: []
         });
         wx.ready(function() {
+            alert(11)
             $("#video")[0].play()
         });
     }
     autoPlayAudio1()
+    document.addEventListener('DOMContentLoaded', function () {
+        $("#video")[0].play()
+    });
 
-    document.addEventListener("WeixinJSBridgeReady", function () {
-        document.getElementById('video').play();
-    }, false);
+
+    document.addEventListener('DOMContentLoaded', function () {
+        function audioAutoPlay() {
+            playBgMusic(true);
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                alert(22)
+                playBgMusic(true);
+            }, false);
+        }
+        audioAutoPlay();
+    });
     var time = setInterval(function(){
         if($("#video")[0].currentTime > 0){
             clearInterval(time)
