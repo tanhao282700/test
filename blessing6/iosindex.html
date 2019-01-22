@@ -55,6 +55,8 @@
         window.parent.playBgMusic(!window.parent.isPlay)
     })
 
+
+
     $(".tiaoguo").click(function(){
         $("#video").hide()
         $(".tiaoguo").hide()
@@ -87,6 +89,15 @@
         time()
     }, false);
 
+    //--创建触摸监听，当浏览器打开页面时，触摸屏幕触发事件，进行音频播放
+    function audioAutoPlay() {
+        playBgMusic(true);
+        document.removeEventListener('touchstart',audioAutoPlay);
+    }
+    document.addEventListener('touchstart', audioAutoPlay);
+    function playBgMusic(){
+        document.getElementById('video').play();
+    }
     /*autoPlayAudio1()*/
 
     $(".button").click(function(){
