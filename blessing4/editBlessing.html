@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>送祝福</title>
+    <script src="assets/resetFontSize.js"></script>
+    <script src="assets/jq.js"></script>
+    <link rel="stylesheet" href="assets/common.css">
+</head>
+<body>
+<div class="editBlessing">
+    <div class="firstLine line">
+        <span class="textOne">我的祝福要送给</span>
+        <div class="box">
+            <select class="firstSelect">
+                <option value="亲爱">亲爱</option>
+                <option value="尊敬">尊敬</option>
+                <option value="陪伴我成长">陪伴我成长</option>
+                <option value="帮助我很多">帮助我很多</option>
+                <option value="并肩作战">并肩作战</option>
+                <option value="颜值爆表">颜值爆表</option>
+                <option value="才华横溢">才华横溢</option>
+                <option value="神给力">神给力</option>
+            </select>
+        </div>
+        <span class="textTwo">的</span>
+        <div class="bigBox">
+            <input type="text" class="otName" placeholder="请输入对方姓名" >
+        </div>
+    </div>
+    <div class="seconedLine line">
+        <span class="textOne">祝福来自</span>
+        <div class="box">
+            <select class="seconedSelect">
+                <option value="爱你">爱你</option>
+                <option value="崇拜你">崇拜你</option>
+                <option value="感谢你">感谢你</option>
+                <option value="关注你">关注你</option>
+                <option value="pick你">pick你</option>
+            </select>
+        </div>
+        <span class="textTwo">的</span>
+        <div class="bigBox">
+            <input type="text" class="myName" placeholder="请输入你的名字" >
+        </div>
+    </div>
+    <div class="button"></div>
+    <div class="bgMusicIcon">
+        <img src="./imgs/play.jpg" alt="">
+    </div>
+</div>
+<!-- 脚本文件 -->
+
+</body>
+<script>
+    if(window.parent.isPlay){
+        $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
+    }else{
+        $(".bgMusicIcon img").attr('src','./imgs/stop.jpg')
+    }
+    $(".bgMusicIcon").click(function(){
+        if(window.parent.isPlay){
+            $(".bgMusicIcon img").attr('src','./imgs/stop.jpg')
+        }else{
+            $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
+        }
+        window.parent.playBgMusic(!window.parent.isPlay)
+    })
+    $(".button").click(function(){
+        if(!$(".otName").val()){
+            alert('请输入对方姓名')
+            $(".otName").focus()
+            return
+        }
+        if(!$(".myName").val()){
+            alert('请输入你的名字')
+            $(".myName").focus()
+            return
+        }
+        sessionStorage.setItem('firstLine',$(".firstSelect").val()+'的'+$(".otName").val())
+        sessionStorage.setItem('lastLine',$(".seconedSelect").val()+'的'+$(".myName").val())
+        window.location.href="./selectText.html"
+    })
+</script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>送祝福</title>
+    <script src="assets/resetFontSize.js"></script>
+    <script src="assets/jq.js"></script>
+    <!-- 必须加在微信api资源 -->
+    <script src="./assets/jweixin-1.3.2.js"></script>
+    <link rel="stylesheet" href="assets/common.css">
+</head>
+<body>
+<video id="video" src="./assets/bless.mp4" style="position:absolute;width:100%;height:100%;"
+       x5-video-player-type="h5"
+       x5-video-player-fullscreen="true"
+       webkit-playsinline="true"
+       playsinline="true"
+       preload="preload"
+       controls="controls"
+       ></video >
+<div class="mainPage">
+    <div class="bgMusicIcon">
+        <img src="./imgs/play.jpg" alt="">
+    </div>
+    <div class="tiaoguo">
+        跳过
+    </div>
+    <div class="mainPageBox scs-hide">
+        <div class="textArea">
+            <p>ando亲爱的______</p>
+            <p>新的一年，祝福你</p>
+            <p>“猪”事顺利，天天开心！</p>
+            <p>感谢你的Oracle</p>
+        </div>
+        <div class="img">
+            <img src="./imgs/4t.png" alt="">
+        </div>
+        <div class="button"></div>
+    </div>
+</div>
+<!-- 脚本文件 -->
+
+</body>
+<script>
+    $(".bgMusicIcon").click(function(){
+        if(window.parent.isPlay){
+            $(".bgMusicIcon img").attr('src','./imgs/stop.jpg')
+        }else{
+            $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
+        }
+        window.parent.playBgMusic(!window.parent.isPlay)
+    })
+
+    $(".tiaoguo").click(function(){
+        $("#video").hide()
+        $(".tiaoguo").hide()
+        $(".mainPageBox").removeClass("scs-hide")
+    })
+    $(".button").click(function(){
+        window.location.href="./editBlessing.html"
+    })
+
+    $("#video")[0].addEventListener('ended', function () {
+        $("#video").hide()
+        $(".tiaoguo").hide()
+        $(".mainPageBox").removeClass("scs-hide")
+    }, false);
+
+
+
+
+
+
+</script>
+</html>
