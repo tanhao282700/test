@@ -63,7 +63,7 @@
         $(".mainPageBox").removeClass("scs-hide")
     })
 
-    /*function autoPlayAudio1() {
+    function autoPlayAudio1() {
         wx.config({
             // 配置信息, 即使不正确也能使用 wx.ready
             debug: false,
@@ -76,7 +76,12 @@
         wx.ready(function() {
             $("#video")[0].play()
         });
-    }*/
+    }
+    autoPlayAudio1()
+
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        document.getElementById('video').play();
+    }, false);
     var time = setInterval(function(){
         if($("#video")[0].currentTime > 0){
             clearInterval(time)
@@ -84,10 +89,8 @@
             document.getElementById('video').play();
         }
     },100)
-    document.addEventListener("WeixinJSBridgeReady", function () {
-        document.getElementById('video').play();
-        time()
-    }, false);
+    time()
+
 
     //--创建触摸监听，当浏览器打开页面时，触摸屏幕触发事件，进行音频播放
     function audioAutoPlay() {
