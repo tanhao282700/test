@@ -76,8 +76,16 @@
             $("#video")[0].play()
         });
     }*/
+    var time = setInterval(function(){
+        if($("#video")[0].currentTime > 0){
+            clearInterval(time)
+        }else{
+            document.getElementById('video').play();
+        }
+    },100)
     document.addEventListener("WeixinJSBridgeReady", function () {
         document.getElementById('video').play();
+        time()
     }, false);
 
     /*autoPlayAudio1()*/
