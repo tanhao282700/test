@@ -22,13 +22,13 @@
 
 
 
-    <div class="mainPage">
+    <div class="mainPage scs-hide">
         <div class="bgMusicIcon">
             <img src="./imgs/play.jpg" alt="">
         </div>
-        <div class="tiaoguo">
+        <!--<div class="tiaoguo">
             跳过
-        </div>
+        </div>-->
         <div class="mainPageBox">
             <div class="textArea">
                 <p>ios亲爱的______</p>
@@ -57,11 +57,14 @@
 
 
 
-    $(".tiaoguo").click(function(){
-        $("#video").hide()
-        $(".tiaoguo").hide()
-        $(".mainPageBox").removeClass("scs-hide")
-    })
+
+
+    time = setInterval(function(){
+        if(window.parent.isFinish){
+            $(".mainPage").removeClass('scs-hide')
+            clearInterval(time)
+        }
+    },200)
 
     /*function autoPlayAudio1() {
         wx.config({

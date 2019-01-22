@@ -68,6 +68,7 @@ button {
   position:absolute;
   right:0.76rem;
   bottom:0.4rem;
+  z-index:2;
 }
 .mainPage{
   width:100%;
