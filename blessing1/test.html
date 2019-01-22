@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/common.css">
 </head>
 <body>
-<audio id='audio' src='./assets/audio.mp3' loop></audio>
+<audio style="position:absolute;opacity:0;" id='audio' src='./assets/audio.mp3' loop></audio>
 <button style="position:absolute;opacity:0;" id='status' onclick='triggerBgMusic()'>播放按钮</button>
 <div class="iframeBox" style="width:100%;height:12.06rem;position:absolute;
   left:0;
@@ -15,7 +15,7 @@
   top:0;
   bottom:0;
   margin:auto;">
-    <iframe id="ifa" src="" frameborder="0" style="width:100%;height:100%;" ></iframe>
+    <iframe id="ifa" src="" frameborder="0" style="width:100%;height:100%;margin:0;padding:0;" ></iframe>
     <script>
         var ua = navigator.userAgent;
         if (ua.indexOf("iPhone") > 0) {
