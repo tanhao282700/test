@@ -61,7 +61,7 @@
         $(".mainPageBox").removeClass("scs-hide")
     })
 
-    function autoPlayAudio1() {
+    /*function autoPlayAudio1() {
         wx.config({
             // 配置信息, 即使不正确也能使用 wx.ready
             debug: false,
@@ -73,11 +73,13 @@
         });
         wx.ready(function() {
             $("#video")[0].play()
-            /*$("#bgmusic").play()*/
         });
-    }
+    }*/
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        document.getElementById('video').play();
+    }, false);
 
-    autoPlayAudio1()
+    /*autoPlayAudio1()*/
 
     $(".button").click(function(){
         window.location.href="./editBlessing.html"
