@@ -50,6 +50,8 @@
     $(".lasL").text(sessionStorage.getItem('lastLine'))  //我的名字
     $("pre").html(sessionStorage.getItem('content'))  //祝福语
     $(".img img").attr('src','./imgs/'+sessionStorage.getItem('thisIndex')+'t.png') //祝福对联
+	//背景图
+	$(".mainPageBox").addClass('send'+sessionStorage.getItem('thisIndex'))
 
 
 

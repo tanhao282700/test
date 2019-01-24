@@ -452,6 +452,18 @@ input::-webkit-input-placeholder {
   height:12.06rem;
   position:static;
 }
+.send4{
+	background:url(../imgs/chun-4.jpg) no-repeat left top;
+}
+.send5{
+	background:url(../imgs/chun-5.jpg) no-repeat left top;
+}
+.send6{
+	background:url(../imgs/chun-6.jpg) no-repeat left top;
+}
+.send7{
+	background:url(../imgs/chun-7.jpg) no-repeat left top;
+}
 .send .button{
   width:2.4rem;
   height:0.8rem;
