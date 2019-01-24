@@ -32,7 +32,7 @@
 </body>
 <script type="application/javascript">
     $("textarea").on('blur',function(){
-        $("body")[0].scrollTo(0, 0);
+        window.parent.window.scrollTo(0, 0);
     })
     if(window.parent.isPlay){
         $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
