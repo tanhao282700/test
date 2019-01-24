@@ -55,6 +55,11 @@
 
 </body>
 <script>
+
+    $("input").on('blur',function(){
+        window.scrollTo(0, 0);
+    })
+
     console.log($(window.parent.document.getElementsByClassName('iframeBox')[0]).css({"position":'static'}))
     if(window.parent.isPlay){
         $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
