@@ -57,7 +57,7 @@
 <script>
 
     $("input").on('blur',function(){
-        window.scrollTo(0, 0);
+        window.parent.window.scrollTo(0, 0);
     })
 
     console.log($(window.parent.document.getElementsByClassName('iframeBox')[0]).css({"position":'static'}))
