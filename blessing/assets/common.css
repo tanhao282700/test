@@ -14,11 +14,11 @@ body {
   width: 100%;
   height: 100%;
   font-size: 12px;
-  background:#da0000;
+  background:#ffffff;
   font-family: "SourceHanSansCN-Regular", "PingFang SC", "SourceHanSansCN";
 }
 body {
-  background-color: #da0000;
+  background-color: rgba(66,180,230,0.1);
   overflow: hidden;
 }
 ul,
