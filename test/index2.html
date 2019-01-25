@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-3.2.1.min.js"></script>
+    <script src="./html2canvas.js"></script>
+</head>
+<style>
+.erweima {
+    height: 100px;
+    width: 200px;
+    background-size: 100%;
+    background-image: url('./assets/img/erweima.jpeg')
+}
+</style>
+<body>
+    <div id="content" class="content" style="width:250px;height:250px;border:1px solid blue;">
+        <span>Hello World!</span>
+        <br>
+        <span><h2>Are you hear me?</h2></span>
+        <div class="erweima"></div>
+    </div>
+    <button id="btnSave">save</button>
+<script>
+$(function(){
+
+const findOne = selector => document.querySelector(selector)
+const on = (el, event, cb) => {
+  return el.addEventListener(event, cb)
+}
+// on(findOne('.content'), 'click', function () {
+//     html2canvas(findOne('.content'),{
+//             onrendered: function(canvas) {
+//                 document.body.appendChild(canvas);
+//                 convertCanvasToImage(canvas);
+//             }
+//         })
+//   })
+
+    $('#btnSave').click(function(event) {
+        // html2canvas($('.content')[0],{
+        //     onrendered: function(canvas) {
+        //         document.body.appendChild(canvas);
+        //         convertCanvasToImage(canvas);
+        //     }
+        // })
+        html2canvas(document.body).then(function(canvas) {
+            document.body.appendChild(canvas);
+        });
+    });
+
+    // function convertCanvasToImage(canvas) {
+    //     var image = new Image();
+    //     image.src = canvas.toDataURL("image/png");
+    //     document.body.appendChild(image);
+    //     return image;
+    // }
+
+    html2canvas(document.body).then(function(canvas) {
+            document.body.appendChild(canvas);
+        });
+
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,454 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  font-family: "PingFang SC", "SourceHanSansCN";
+}
+body {
+  background-color: rgba(66,180,230,0.1);
+  overflow: hidden;
+  position: relative;
+}
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+.hidden {
+  display: none;
+}
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.stop-music {
+  z-index: 1000;
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: url("./img/audio-play.png") left top/0.5rem auto no-repeat;
+}
+.stop-music.stop {
+  background-image: url("./img/audio-stop.png");
+}
+.top-box {
+  width: 100%;
+  height: 3.44rem;
+  background: url("./img/logo.png") 0.39rem 0.28rem/2rem auto no-repeat, url("./img/topBgMoon.png") left top/100% auto no-repeat;
+}
+.bottom-box {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2.43rem;
+  background: url("./img/bottomBg.png") left top/100% auto no-repeat;
+  transition: all 0.5s linear;
+}
+.bottom-box.square-bottom {
+  height: 1.62rem;
+  background: url("./img/squareBg.png") left top/100% auto no-repeat;
+}
+.loading-box {
+  padding-top: 1.1rem;
+}
+.loading-box .loading-text {
+  width: 100%;
+  height: 1.46rem;
+  background: url("./img/loadingText.png") center top/6.16rem auto no-repeat;
+}
+.loading-box .loading {
+  width: 100%;
+  height: 0.42rem;
+  padding-top: 2.6rem;
+  background: url("./img/loading.png") center top 2.6rem/3.36rem auto no-repeat;
+}
+.line-box {
+  padding-top: 1.12rem;
+  display: none;
+  opacity: 0;
+}
+.line-box .line-text {
+  width: 100%;
+  height: 1.16rem;
+  background: url("./img/lineText.png") center top/3.59rem auto no-repeat;
+}
+.line-box .line {
+  position: relative;
+  margin: 0.8rem auto 0;
+  width: 4rem;
+  height: 4rem;
+  border: 0.05rem solid transparent;
+}
+.line-item {
+  position: absolute;
+  background: transparent;
+  transition: all 0.3s;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.line-item:before {
+  position: absolute;
+  content: '';
+  background: #3dcd58;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.line-item.top,
+.line-item.bottom {
+  width: calc(4.1rem + 0.4rem);
+  height: calc(0.05rem + 0.4rem);
+}
+.line-item.top:before,
+.line-item.bottom:before {
+  width: 4.1rem;
+  height: 0.05rem;
+}
+.line-item.top {
+  top: 0.8rem;
+  left: -0.25rem;
+}
+.line-item.bottom {
+  top: 1.47rem;
+  left: -0.25rem;
+}
+.line-item.left,
+.line-item.right {
+  width: calc(0.05rem + 0.4rem);
+  height: calc(4.1rem + 0.4rem);
+}
+.line-item.left:before,
+.line-item.right:before {
+  height: 4.1rem;
+  width: 0.05rem;
+}
+.line-item.left {
+  top: -0.25rem;
+  left: 0.82rem;
+}
+.line-item.right {
+  top: -0.25rem;
+  left: 1.55rem;
+}
+.square-box {
+  padding-top: 0.36rem;
+  display: block;
+  opacity: 0;
+}
+.square-box .square {
+  margin: 0 auto;
+  width: 3.43rem;
+  height: 3.43rem;
+  background: url("./img/square.png") center top/3.43rem auto no-repeat;
+}
+.square-box .square-text {
+  margin: 0.29rem auto 0;
+  height: 2.56rem;
+  background: url("./img/squareText.png") center top/3.45rem auto no-repeat;
+}
+.video-box {
+  display: block;
+  object-fit: fill;
+  object-position: center center;
+}
+.picture-box {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url("./img/logoBg.png") left top/2.97rem auto no-repeat, url("./img/pictureBg.png") left top/100% auto repeat;
+}
+.picture-box .picture-button {
+  position: absolute;
+  left: 0.72rem;
+  top: 8.09rem;
+  width: 3.04rem;
+  height: 3.04rem;
+  background: url("./img/blackLightBg.png") left top/100% auto no-repeat;
+}
+.picture-box .picture-button > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -0.775rem;
+  margin-top: -0.775rem;
+  width: 1.55rem;
+  height: 1.55rem;
+  background: url("./img/light.png") left top/100% auto no-repeat;
+}
+.picture-box .picture-button > div:before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  margin-left: -0.15rem;
+  margin-top: -0.15rem;
+  width: 0.3rem;
+  height: 0.3rem;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background: #c7e8fa;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-name: breathe;
+  -webkit-animation-duration: 2100ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+}
+.picture-box .picture-button.golden {
+  left: 3.76rem;
+  top: 0.93rem;
+  background: url("./img/goldenLightBg.png") left top/100% auto no-repeat;
+}
+.picture-box .picture-button.golden > div:before {
+  -webkit-animation-duration: 2300ms;
+}
+.picture-box .picture-button.white {
+  left: 1.49rem;
+  top: 3.98rem;
+  width: 2.24rem;
+  height: 2.24rem;
+  background: url("./img/whiteLightBg.png") left top/100% auto no-repeat;
+}
+.picture-box .picture-button.white > div:before {
+  -webkit-animation-duration: 2000ms;
+}
+.picture-box .next-btn {
+  display: none;
+  position: absolute;
+  top: 6.33rem;
+  left: 6.49rem;
+  width: 0.56rem;
+  height: 0.37rem;
+  background: url("./img/next.png") left top/100% auto no-repeat;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.picture-box .btn-group {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 11.1rem;
+  left: 0rem;
+  text-align: center;
+}
+.picture-box .btn-group > div {
+  position: relative;
+  display: inline-block;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  width: 1.25rem;
+  height: 0.44rem;
+  text-align: center;
+  line-height: 0.44rem;
+  font-size: 0.25rem;
+  color: #3dcd58;
+  background: rgba(255,255,255,0.84);
+  border-radius: 0.05rem;
+  box-shadow: 0 0 0.09rem 0 rgba(0,0,0,0.36);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.picture-box .btn-group > div:before {
+  position: absolute;
+  content: '';
+  width: 1.4rem;
+  height: 0.58rem;
+  border: 1px solid #fff;
+  border-radius: 0.07rem;
+  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.picture-box .picture {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-position: left top;
+  background-repeat: no-repeat;
+  transition: all 0.5s linear;
+}
+.picture-box .pictuer-info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(33,33,33,0.7);
+  display: none;
+}
+.picture-box .pictuer-info .close-btn {
+  position: absolute;
+  width: 1.2rem;
+  height: 0.8rem;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: url("./img/closePic.png") left top/100% auto no-repeat;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.picture-box .pictuer-info .product {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.picture {
+  background-size: 150% auto;
+}
+.picture-white {
+  background-image: url("img/picture-white.png");
+}
+.picture-black {
+  background-image: url("img/picture-black.png");
+}
+.picture-gloden {
+  background-image: url("img/picture-gloden.png");
+}
+.product-white .product {
+  background-image: url("img/whiteLightBg.png");
+}
+.product-black .product {
+  background-image: url("img/blackLightBg.png");
+}
+.product-gloden .product {
+  background-image: url("img/goldenLightBg.png");
+}
+.picture-box.light-active {
+  background: none;
+}
+.picture-box.light-active .btn-group,
+.picture-box.light-active .picture,
+.picture-box.light-active .next-btn {
+  display: block;
+}
+.picture-box.light-active .picture-button {
+  display: none;
+}
+.end-box {
+  padding-top: 0.28rem;
+  display: none;
+  opacity: 0;
+}
+.end-box .logo-box {
+  width: 100%;
+  height: 0.46rem;
+  background: url("./img/green-logo.png") left 0.39rem top/2rem auto no-repeat;
+}
+.end-box .small-video-box {
+  margin: 1.39rem auto 0;
+  width: 6.12rem;
+  height: 4.23rem;
+  background: url("./img/videoBg.png") center top/100% auto no-repeat;
+}
+.end-box .small-video-box video {
+  margin: 0.46rem 0.42rem;
+  width: 5.26rem;
+  height: 3.02rem;
+  object-fit: fill;
+  object-position: center center;
+}
+.end-box .ending-text {
+  margin: 0.55rem auto 0;
+  height: 1.96rem;
+  background: url("./img/endText1.png") center top/5.07rem auto no-repeat;
+}
+.end-box .ending-text2 {
+  margin: 0.23rem auto 0;
+  height: 0.78rem;
+  background: url("./img/endText2.png") center top/3.46rem auto no-repeat;
+}
+.end-box .ending-btn {
+  display: block;
+  margin: 0.29rem auto 0;
+  width: 1.52rem;
+  height: 0.69rem;
+  background: url("./img/endBtn.png") left top/1.52rem auto no-repeat;
+}
+.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+.fadeIn {
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+.backgroundChange {
+  background-size: 100% auto;
+}
+@-moz-keyframes breathe {
+  0% {
+    opacity: 0.2;
+    box-shadow: 0 0 0.06rem 0.14rem rgba(255,253,233,0.23);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0.16rem 0.24rem rgba(255,253,233,0.63);
+  }
+}
+@-webkit-keyframes breathe {
+  0% {
+    opacity: 0.2;
+    box-shadow: 0 0 0.06rem 0.14rem rgba(255,253,233,0.23);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0.16rem 0.24rem rgba(255,253,233,0.63);
+  }
+}
+@-o-keyframes breathe {
+  0% {
+    opacity: 0.2;
+    box-shadow: 0 0 0.06rem 0.14rem rgba(255,253,233,0.23);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0.16rem 0.24rem rgba(255,253,233,0.63);
+  }
+}
+@keyframes breathe {
+  0% {
+    opacity: 0.2;
+    box-shadow: 0 0 0.06rem 0.14rem rgba(255,253,233,0.23);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0.16rem 0.24rem rgba(255,253,233,0.63);
+  }
+}
