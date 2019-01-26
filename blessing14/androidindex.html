@@ -18,6 +18,7 @@
        webkit-playsinline="true"
        playsinline="true"
        preload="preload"
+       controlls="controlls"
        ></video >
 <div class="mainPage">
     <div class="fadePage">
@@ -47,28 +48,16 @@
 
 </body>
 <script>
-    var isFf = false
-    var isV = false
     $(".mainPageBox").css({'display':'none'})
     $(".bgMusicIcon").click(function(){
-        if(isFf){
+
             if(window.parent.isPlay){
                 $(".bgMusicIcon img").attr('src','./imgs/stop.jpg')
             }else{
                 $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
             }
             window.parent.playBgMusic(!window.parent.isPlay)
-        }else{
-            if(isV){
-                isV = false
-                $(".bgMusicIcon img").attr('src','./imgs/stop.jpg')
-                $("#vedio")[0].defaultMuted=true
-            }else{
-                isV = true
-                $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
-                $("#vedio")[0].defaultMuted=false
-            }
-        }
+
     })
 
     $(".tiaoguo").click(function(){
@@ -85,10 +74,10 @@
     })
 
     $("#video")[0].addEventListener('ended', function () {
-        isFf = true
         $("#video").hide()
         $(".tiaoguo").hide()
         $(".mainPageBox").css({'display':'flex'})
+        $(".bgMusicIcon").removeClass('scs-hide')
         $(window.parent.document.body).css({'background':'#da0000'})
         $(window.parent.document.html).css({'background':'#da0000'})
         window.parent.playBgMusic(true)
@@ -103,7 +92,6 @@
         $(".fadePage").hide()
         $("#video").removeClass('scs-hide')
         $("#video")[0].play()
-        $(".bgMusicIcon").removeClass('scs-hide')
         $(".tiaoguo").removeClass('scs-hide')
     })
 
