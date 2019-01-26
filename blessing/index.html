@@ -84,7 +84,7 @@
         }
     }
     //----------处理页面激活------------
-    /*var hiddenProperty = 'hidden' in document ? 'hidden' :
+    var hiddenProperty = 'hidden' in document ? 'hidden' :
         'webkitHidden' in document ? 'webkitHidden' :
             'mozHidden' in document ? 'mozHidden' :
                 null;
@@ -99,7 +99,7 @@
             audio.pause();
         }
     }
-    document.addEventListener(visibilityChangeEvent, onVisibilityChange);*/
+    document.addEventListener(visibilityChangeEvent, onVisibilityChange);
 
     //---------音乐播放和暂停----------
       function playBgMusic(val){
@@ -146,6 +146,14 @@
         $("body").css({'background':'#da0000'})
         $("html").css({'background':'#da0000'})
         window.isFinish = true
+    })
+
+
+    document.addEventListener('touchstart',function(e){
+        if(ua.indexOf("Android") > 0){
+            e.preventDefault()
+            e.stopPropagation()
+        }
     })
 
 
