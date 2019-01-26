@@ -60,9 +60,11 @@
             window.parent.playBgMusic(!window.parent.isPlay)
         }else{
             if(isV){
-                $("#vedio")[0].muted=true
+                $(".bgMusicIcon img").attr('src','./imgs/stop.jpg')
+                $("#vedio")[0].defaultMuted=true
             }else{
-                $("#vedio")[0].muted=false
+                $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
+                $("#vedio")[0].defaultMuted=false
             }
         }
     })
