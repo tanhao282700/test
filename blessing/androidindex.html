@@ -12,23 +12,25 @@
     <link rel="stylesheet" href="assets/common.css">
 </head>
 <body>
-<video id="video" src="./assets/bless.mp4" style="z-index:2;position:absolute;width:100%;height:100%;"
-       x5-playsinline="true"
+<video id="video" class="scs-hide" src="./assets/andorid.mp4" style="z-index:2;position:absolute;width:100%;height:100%;"
+       x5-video-player-type="h5"
+       x5-video-player-fullscreen="true"
        webkit-playsinline="true"
-       x-webkit-airplay="true"
        playsinline="true"
        preload="preload"
-       muted="true"
-       controls="controls"
        ></video >
 <div class="mainPage">
-    <div class="bgMusicIcon" style="z-index:3;">
+    <div class="fadePage">
+        <div class="lihe"></div>
+        <div class="txt"></div>
+    </div>
+    <div class="bgMusicIcon scs-hide" style="z-index:3;">
         <img src="./imgs/play.jpg" alt="">
     </div>
-    <div class="tiaoguo" style="z-index:3;">
+    <div class="tiaoguo scs-hide" style="z-index:3;">
         跳过
     </div>
-    <div class="mainPageBox scs-hide">
+    <div class="mainPageBox">
         <div class="textArea">
             <p>亲爱的______</p>
             <p>新的一年，祝福你</p>
@@ -45,6 +47,7 @@
 
 </body>
 <script>
+    $(".mainPageBox").css({'display':'none'})
     $(".bgMusicIcon").click(function(){
         if(window.parent.isPlay){
             $(".bgMusicIcon img").attr('src','./imgs/stop.jpg')
@@ -57,7 +60,7 @@
     $(".tiaoguo").click(function(){
         $("#video").hide()
         $(".tiaoguo").hide()
-        $(".mainPageBox").removeClass("scs-hide")
+        $(".mainPageBox").css({'display':'flex'})
     })
     $(".button").click(function(){
         window.location.href="./editBlessing.html"
@@ -66,9 +69,24 @@
     $("#video")[0].addEventListener('ended', function () {
         $("#video").hide()
         $(".tiaoguo").hide()
-        $(".mainPageBox").removeClass("scs-hide")
+        $(".mainPageBox").css({'display':'flex'})
+        $(window.parent.document.body).css({'background':'#da0000'})
+        $(window.parent.document.html).css({'background':'#da0000'})
     }, false);
 
+
+
+    $(".txt").fadeIn(2000,function(){
+        $(".lihe").show()
+    })
+    $(".fadePage").click(function(){
+        $(".fadePage").hide()
+        $("#video").removeClass('scs-hide')
+        $("#video")[0].play()
+        $(".bgMusicIcon").removeClass('scs-hide')
+        $(".tiaoguo").removeClass('scs-hide')
+        window.parent.playBgMusic(true)
+    })
 
 
 

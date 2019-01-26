@@ -18,7 +18,6 @@ body {
   font-family: "SourceHanSansCN-Regular", "PingFang SC", "SourceHanSansCN";
 }
 body {
-  background-color: rgba(66,180,230,0.1);
   overflow: hidden;
 }
 ul,
@@ -454,15 +453,19 @@ input::-webkit-input-placeholder {
 }
 .send4{
 	background:url(../imgs/chun-4.jpg) no-repeat left top;
+  background-size:100% 100%;
 }
 .send5{
 	background:url(../imgs/chun-5.jpg) no-repeat left top;
+  background-size:100% 100%;
 }
 .send6{
 	background:url(../imgs/chun-6.jpg) no-repeat left top;
+  background-size:100% 100%;
 }
 .send7{
 	background:url(../imgs/chun-7.jpg) no-repeat left top;
+  background-size:100% 100%;
 }
 .send .button{
   width:2.4rem;
@@ -520,4 +523,95 @@ input::-webkit-input-placeholder {
 .img img{
   width:100%;
   height:100%;
+}
+
+
+
+.fadePage{
+  width:100%;
+  height:100%;
+  position:relative;
+}
+.fadePage .txt{
+  width:2.93rem;
+  height:1.92rem;
+  position:absolute;
+  left:2.3rem;
+  bottom:3.37rem;
+  background:url(../imgs/txt.png) no-repeat left top/100% 100%;
+  display: none;
+}
+.lihe{
+  width:1.84rem;
+  height:1.95rem;
+  position:absolute;
+  left:2.83rem;
+  /*top:3.87rem;*/
+  top:2.87rem;
+  background:url(../imgs/lihe.png) no-repeat left top/100% 100%;
+  display: none;
+  animation: myfirst 1.2s;
+  /*-moz-animation: myfirst 1.2s;	!* Firefox *!
+  -webkit-animation: myfirst 1.2s;	!* Safari 和 Chrome *!
+  -o-animation: myfirst 1.2s;*/
+  animation-fill-mode:forwards;
+  animation-timing-function:ease-in-out;
+}
+@keyframes myfirst {
+  0% {top:2.87rem;}
+  15% {top:4.2rem;}
+  30% {top:3.87rem;}
+  40% {top:3.87rem;}
+  45%{transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    left:2.83rem;
+    top:3.87rem;
+  }
+  55% {
+    left:3.3rem;
+    top:3.87rem;
+    transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+  }
+  70%{
+    left:2.5rem;
+    top:3.87rem;
+    transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
+    -moz-transform: rotate(-20deg);
+    -o-transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+  }
+  80%{
+    left:3.1rem;
+    top:3.87rem;
+    transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+  }
+  90%{
+    left:2.7rem;
+    top:3.87rem;
+    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+  }
+  100%{
+    top:3.87rem;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    left:2.83rem;
+  }
 }
