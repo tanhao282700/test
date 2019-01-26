@@ -72,15 +72,17 @@
         });
         //--创建触摸监听，当浏览器打开页面时，触摸屏幕触发事件，进行音频播放
         function audioAutoPlay() {
-            playBgMusic(true);
-            document.removeEventListener('touchstart',audioAutoPlay);
+            if (ua.indexOf("iPhone") > 0) {
+                playBgMusic(true);
+                document.removeEventListener('touchstart',audioAutoPlay);
+            }
         }
         if (ua.indexOf("iPhone") > 0) {
             document.addEventListener('touchstart', audioAutoPlay);
         }
     }
     //----------处理页面激活------------
-    /*var hiddenProperty = 'hidden' in document ? 'hidden' :
+    var hiddenProperty = 'hidden' in document ? 'hidden' :
         'webkitHidden' in document ? 'webkitHidden' :
             'mozHidden' in document ? 'mozHidden' :
                 null;
@@ -95,7 +97,7 @@
             audio.pause();
         }
     }
-    document.addEventListener(visibilityChangeEvent, onVisibilityChange);*/
+    document.addEventListener(visibilityChangeEvent, onVisibilityChange);
 
     //---------音乐播放和暂停----------
       function playBgMusic(val){
