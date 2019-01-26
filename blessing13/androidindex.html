@@ -60,9 +60,11 @@
             window.parent.playBgMusic(!window.parent.isPlay)
         }else{
             if(isV){
+                isV = false
                 $(".bgMusicIcon img").attr('src','./imgs/stop.jpg')
                 $("#vedio")[0].defaultMuted=true
             }else{
+                isV = true
                 $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
                 $("#vedio")[0].defaultMuted=false
             }
