@@ -47,31 +47,47 @@
 
 </body>
 <script>
+    var isFf = false
+    var isV = true
     $(".mainPageBox").css({'display':'none'})
     $(".bgMusicIcon").click(function(){
-        if(window.parent.isPlay){
-            $(".bgMusicIcon img").attr('src','./imgs/stop.jpg')
+        if(isFf){
+            if(window.parent.isPlay){
+                $(".bgMusicIcon img").attr('src','./imgs/stop.jpg')
+            }else{
+                $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
+            }
+            window.parent.playBgMusic(!window.parent.isPlay)
         }else{
-            $(".bgMusicIcon img").attr('src','./imgs/play.jpg')
+            if(isV){
+                $("#vedio")[0].muted=true
+            }else{
+                $("#vedio")[0].muted=false
+            }
         }
-        window.parent.playBgMusic(!window.parent.isPlay)
     })
 
     $(".tiaoguo").click(function(){
+        isFf = true
         $("#video").hide()
         $(".tiaoguo").hide()
         $(".mainPageBox").css({'display':'flex'})
+        $(window.parent.document.body).css({'background':'#da0000'})
+        $(window.parent.document.html).css({'background':'#da0000'})
+        window.parent.playBgMusic(true)
     })
     $(".button").click(function(){
         window.location.href="./editBlessing.html"
     })
 
     $("#video")[0].addEventListener('ended', function () {
+        isFf = true
         $("#video").hide()
         $(".tiaoguo").hide()
         $(".mainPageBox").css({'display':'flex'})
         $(window.parent.document.body).css({'background':'#da0000'})
         $(window.parent.document.html).css({'background':'#da0000'})
+        window.parent.playBgMusic(true)
     }, false);
 
 
