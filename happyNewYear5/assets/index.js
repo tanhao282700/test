@@ -54,7 +54,7 @@ setTimeout(function(){
         var bool1 = new Parabola({
             el: "#boll",
             targetEl:'.clounds2Pig',
-            curvature: 0.005,
+            curvature: 0.007,
             duration: 700,
             callback: function () {
                 $(".animatePig3").removeClass('animatePig3-2')
@@ -88,7 +88,7 @@ setTimeout(function(){
                                          $(".pigTips").animate({opacity:1},1000,'swing')
                                          $(".pig").animate({opacity:0},1000,'swing')
                                      },1000)
-                                     },500)
+                                     },300)
 
                             }
                         });
