@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <script src="assets/resetFontSize.js"></script>
     <link rel="stylesheet" href="assets/common.css">
+    <script type="text/javascript">
+        <!--//--><![CDATA[//><!--
+        var images = new Array()
+        function preload() {
+            for (i = 0; i < preload.arguments.length; i++) {
+                images[i] = new Image()
+                images[i].src = preload.arguments[i]
+            }
+        }
+        preload(
+            "imgs/down1.png",
+            "imgs/down2.png",
+            "imgs/down3.png",
+            "imgs/down4.png"
+        )
+        //--><!]]>
+    </script>
 </head>
 <body>
 <div class="main">
