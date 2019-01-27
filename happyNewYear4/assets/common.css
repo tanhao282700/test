@@ -205,19 +205,94 @@ input::-webkit-input-placeholder {
   right:0.7rem;
 }
 .animatePig{
+   width: 1.6rem;
+   height: 17vh;
+   background:url(../imgs/down1.png) no-repeat left top/100% 100%;
+   position:absolute;
+   left:3.5rem;
+   /*top:5vh;*/
+   top:0;
+   animation: pigFirstAnimate 0.7s;
+   -moz-animation: pigFirstAnimate 0.7s;	/* Firefox */
+   -webkit-animation: pigFirstAnimate 0.7s;	/* Safari 和 Chrome */
+   -o-animation: pigFirstAnimate 0.7s;
+   animation-fill-mode:forwards;
+   animation-timing-function:ease-in-out;
+ }
+.animatePig2{
   width: 1.6rem;
   height: 17vh;
-  background:url(../imgs/down1.png) no-repeat left top/100% 100%;
   position:absolute;
   left:3.5rem;
-  /*top:5vh;*/
-  top:0;
-  animation: pigFirstAnimate 0.7s;
-  -moz-animation: pigFirstAnimate 0.7s;	/* Firefox */
-  -webkit-animation: pigFirstAnimate 0.7s;	/* Safari 和 Chrome */
-  -o-animation: pigFirstAnimate 0.7s;
+  background:url(../imgs/down4.png) no-repeat left top/100% 100%;
+  top:5vh;
+  opacity:0;
+  animation: animatePig2 0.7s;
+  -moz-animation: animatePig2 0.7s;	/* Firefox */
+  -webkit-animation: animatePig2 0.7s;	/* Safari 和 Chrome */
+  -o-animation: animatePig2 0.7s;
   animation-fill-mode:forwards;
-  animation-timing-function:ease-in-out;
+}
+.animatePig3{
+  width: 1.7rem;
+  height: 17vh;
+  position:absolute;
+  left:3.35rem;
+  background:url(../imgs/down3.png) no-repeat left top/100% 100%;
+  top:5vh;
+}
+.animatePig3-2{
+  width: 1.6rem;
+  left:3.5rem;
+  height:17vh;
+  background:url(../imgs/down2.png) no-repeat left top/100% 100%;
+}
+.animatePig3-3{
+  width: 1.6rem;
+  left:3.5rem;
+  height:17vh;
+  background:url(../imgs/right1.png) no-repeat left top/100% 100%;
+}
+.animatePig3-4{
+  width: 1.6rem;
+  left:3.5rem;
+  height:17vh;
+  background:url(../imgs/right2.png) no-repeat left top/100% 100%;
+}
+.animatePig3-5{
+  width: 1.6rem;
+  left:3.5rem;
+  height:17vh;
+  background:url(../imgs/right3.png) no-repeat left top/100% 100%;
+}
+.animatePig3-6{
+  width: 1.6rem;
+  left:3.5rem;
+  height:17vh;
+  background:url(../imgs/right4.png) no-repeat left top/100% 100%;
+}
+.animatePig3-7{
+  width: 1.6rem;
+  left:3.5rem;
+  height:17vh;
+  background:url(../imgs/right5.png) no-repeat left top/100% 100%;
+}
+.animatePig3-8{
+  width: 1.6rem;
+  left:3.5rem;
+  height:17vh;
+  background:url(../imgs/down4.png) no-repeat left top/100% 100%;
+}
+.animatePig3-9{
+  width: 1.7rem;
+  height: 17vh;
+  left:3.3rem;
+  background:url(../imgs/down3.png) no-repeat left top/100% 100%;
+}
+@keyframes animatePig2 {
+  0%{opacity:0;}
+  99%{opacity:0;}
+  100%{opacity:1;}
 }
 @keyframes pigFirstAnimate {
   0%{
@@ -233,56 +308,57 @@ input::-webkit-input-placeholder {
     background:url(../imgs/down2.png) no-repeat left top/100% 100%;
 
   }
-  70%{
+  60%{
     width: 1.6rem;
     left:3.5rem;
     height:17vh;
     background:url(../imgs/down2.png) no-repeat left top/100% 100%;
-
   }
-  80%{
+  61%{
     width: 1.7rem;
     left:3.3rem;
-    height:16.1vh;
+    height:17vh;
     background:url(../imgs/down3.png) no-repeat left top/100% 100%;
-    top:6vh;
+    top:5vh;
   }
   90%{
     width: 1.7rem;
     left:3.3rem;
-    height:16.1vh;
+    height:17vh;
     background:url(../imgs/down3.png) no-repeat left top/100% 100%;
-    top:6vh;
+    top:5vh;
   }
-  100%{
+  99%{
     background:url(../imgs/down4.png) no-repeat left top/100% 100%;
     top:5vh;
+    opacity:1;
+  }
+  100%{
+    opacity:0;
   }
 }
 .clounds2Pig{
-  width:2.33rem;
-  height:20.48vh;
-  background:url(../imgs/pig.png) no-repeat left top/100% 100%;
+  width: 1.6rem;
+  height: 17vh;
   position:absolute;
   left:1.4rem;
-  /*top:3.316vh;*/
-  top:17vh;
+  background:url(../imgs/down4.png) no-repeat left top/100% 100%;
+  top:20vh;
   opacity:0;
 }
 .clounds3Pig{
-  width:2.33rem;
-  height:20.48vh;
-  background:url(../imgs/pig.png) no-repeat left top/100% 100%;
+  width: 1.6rem;
+  height: 17vh;
   position:absolute;
-  left:4.6rem;
-  /*top:3.316vh;*/
-  top:31vh;
+  left:4.7rem;
+  background:url(../imgs/right5.png) no-repeat left top/100% 100%;
+  top:35vh;
   opacity:0;
 }
 .pig{
-  width:2.33rem;
-  height:20.48vh;
-  background:url(../imgs/pig.png) no-repeat left top/100% 100%;
+  width: 1.6rem;
+  height: 17vh;
+  background:url(../imgs/down4.png) no-repeat left top/100% 100%;
   position:absolute;
   left:2.23rem;
   bottom:1.08rem;
