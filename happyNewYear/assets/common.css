@@ -1,0 +1,545 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  background:#ffffff;
+  font-family: "SourceHanSansCN-Regular", "PingFang SC", "SourceHanSansCN";
+}
+body {
+  background-color: rgba(66,180,230,0.1);
+  overflow: hidden;
+}
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+  /* transparent是全透明黑色(black)的速记法，即一个类似rgba(0,0,0,0)这样的值 */
+}
+
+
+/* Mozilla Firefox 4 to 18 */
+
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+
+
+/* Mozilla Firefox 19+ */
+
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+
+
+/* Internet Explorer 10+ */
+
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+input::-webkit-input-placeholder {
+  /* placeholder颜色  */
+   color: white;
+}
+*{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+.scs-hide{
+  display: none!important;
+}
+
+.main{
+  width:100%;
+  height:100%;
+  /*height:12.06rem;*/
+  background:url(../imgs/bg1.jpg) no-repeat center center/4.84rem 5rem,
+  url(../imgs/bg-bottom.png) no-repeat left bottom/100% 0.98rem,
+  url(../imgs/bg.jpg) no-repeat left top/100% 100%;
+}
+.con{
+  width:100%;
+  height:100%;
+}
+.pageOne{
+  width:100%;
+  height:100%;
+  position:relative;
+}
+.clounds1{
+  width:3.27rem;
+  height:1.16rem;
+  left:2.37rem;
+  /*top:2.53rem;*/
+  top:21vh;
+  position:absolute;
+  background:url(../imgs/clounds1.png) no-repeat left top/100% 100%;
+  animation: cloundsOne 1s;
+  -moz-animation: cloundsOne 1s;	/* Firefox */
+  -webkit-animation: cloundsOne 1s;	/* Safari 和 Chrome */
+  -o-animation: cloundsOne 1s;
+  animation-fill-mode:forwards;
+  animation-timing-function:ease-in-out;
+}
+@keyframes cloundsOne {
+  0%{
+    left:1.37rem;
+    opacity:0;
+  }
+  100%{
+    left:2.37rem;
+    opacity:1;
+  }
+}
+.clounds2{
+  width:3.27rem;
+  height:1.16rem;
+  left:0.27rem;
+  /*top:4.25rem;*/
+  top:36vh;
+  position:absolute;
+  background:url(../imgs/clounds2.png) no-repeat left top/100% 100%;
+  animation: cloundsTwo 1s;
+  -moz-animation: cloundsTwo 1s;	/* Firefox */
+  -webkit-animation: cloundsTwo 1s;	/* Safari 和 Chrome */
+  -o-animation: cloundsTwo 1s;
+  animation-fill-mode:forwards;
+  animation-timing-function:ease-in-out;
+}
+@keyframes cloundsTwo {
+  0%{
+    left:0;
+    opacity:0;
+  }
+  100%{
+    left:0.27rem;
+    opacity:1;
+  }
+}
+.clounds3{
+  width:4.62rem;
+  height:1.64rem;
+  /*right:0.27rem;*/
+  /*top:6.03rem;*/
+  left:2.67rem;
+  top:50vh;
+  position:absolute;
+  background:url(../imgs/clounds3.png) no-repeat left top/100% 100%;
+  animation: cloundsThree 1s;
+  -moz-animation: cloundsThree 1s;	/* Firefox */
+  -webkit-animation: cloundsThree 1s;	/* Safari 和 Chrome */
+  -o-animation: cloundsThree 1s;
+  animation-fill-mode:forwards;
+  animation-timing-function:ease-out;
+}
+@keyframes cloundsThree {
+  0%{
+    left:1.67rem;
+    opacity:0;
+  }
+  100%{
+    left:2.67rem;
+    opacity:1;
+  }
+}
+.cloundText{
+  display: inline-block;
+  width:2.05rem;
+  height:0.45rem;
+  opacity:0;
+  animation: cloundTextAnimate 1s;
+  -moz-animation: cloundTextAnimate 1s;	/* Firefox */
+  -webkit-animation: cloundTextAnimate 1s;	/* Safari 和 Chrome */
+  -o-animation: cloundTextAnimate 1s;
+  animation-fill-mode:forwards;
+  animation-timing-function:ease-out;
+}
+@keyframes cloundTextAnimate {
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+.clound1text{
+  background:url(../imgs/c1.png) no-repeat left top/100% 100%;
+  position:absolute;
+  top:-0.5rem;
+  right:0.2rem;
+}
+.clound2text{
+  background:url(../imgs/c2.png) no-repeat left top/100% 100%;
+  position:absolute;
+  top:-0.5rem;
+  right:0.2rem;
+}
+.clound3text{
+  background:url(../imgs/c3.png) no-repeat left top/100% 100%;
+  position:absolute;
+  top:-0.5rem;
+  right:0.7rem;
+}
+.animatePig{
+  width: 1.6rem;
+  height: 17vh;
+  background:url(../imgs/down1.png) no-repeat left top/100% 100%;
+  position:absolute;
+  left:3.5rem;
+  /*top:5vh;*/
+  top:0;
+  animation: pigFirstAnimate 10s;
+  -moz-animation: pigFirstAnimate 10s;	/* Firefox */
+  -webkit-animation: pigFirstAnimate 10s;	/* Safari 和 Chrome */
+  -o-animation: pigFirstAnimate 10s;
+  animation-fill-mode:forwards;
+  animation-timing-function:ease-in-out;
+}
+@keyframes pigFirstAnimate {
+  0%{
+    top:0;
+    background:url(../imgs/down1.png) no-repeat left top/100% 100%;
+  }
+  10%{
+    top:0;
+    background:url(../imgs/down1.png) no-repeat left top/100% 100%;
+  }
+  20%{
+    height:17vh;
+    background:url(../imgs/down2.png) no-repeat left top/100% 100%;
+
+  }
+  70%{
+    height:17vh;
+    background:url(../imgs/down2.png) no-repeat left top/100% 100%;
+
+  }
+  80%{
+    height:16.1vh;
+    background:url(../imgs/down3.png) no-repeat left top/100% 100%;
+    top:6vh;
+  }
+  90%{
+    height:16.1vh;
+    background:url(../imgs/down3.png) no-repeat left top/100% 100%;
+    top:6vh;
+  }
+  100%{
+    background:url(../imgs/down4.png) no-repeat left top/100% 100%;
+    top:5vh;
+  }
+}
+.clounds2Pig{
+  width:2.33rem;
+  height:20.48vh;
+  background:url(../imgs/pig.png) no-repeat left top/100% 100%;
+  position:absolute;
+  left:1.4rem;
+  /*top:3.316vh;*/
+  top:17vh;
+  opacity:0;
+}
+.clounds3Pig{
+  width:2.33rem;
+  height:20.48vh;
+  background:url(../imgs/pig.png) no-repeat left top/100% 100%;
+  position:absolute;
+  left:4.6rem;
+  /*top:3.316vh;*/
+  top:31vh;
+  opacity:0;
+}
+.pig{
+  width:2.33rem;
+  height:20.48vh;
+  background:url(../imgs/pig.png) no-repeat left top/100% 100%;
+  position:absolute;
+  left:2.23rem;
+  bottom:1.08rem;
+  opacity:0;
+}
+.pigTips{
+  width:100%;
+  height:100%;
+  position:absolute;
+  left:0;
+  top:0;
+  background-color:rgba(36,36,36,0.7);
+  z-index:1;
+  opacity:0;
+}
+.pigTipsBg{
+  position:absolute;
+  width:6.38rem;
+  height:4.67rem;
+  left:0.78rem;
+  bottom:1.48rem;
+  background:url(../imgs/pigTips.png) no-repeat left top/100% 100%;
+}
+
+.model-pig{
+  width:2.33rem;
+  height:2.47rem;
+  background:url(../imgs/pig.png) no-repeat left top/100% 100%;
+  position:absolute;
+  left:0.48rem;
+  bottom:1rem;
+  z-index:1;
+}
+.model-text{
+  width:4.05rem;
+  height:4.47rem;
+  background:url(../imgs/model-bg.png) no-repeat left top/100% 100%;
+  position:absolute;
+  left:0.24rem;
+  bottom:2.56rem;
+}
+.model-text1{
+  position:absolute;
+  right: 1.6rem;
+  top: 1.9rem;
+  width:0.82rem;
+  height:1.9rem;
+  z-index:1;
+}
+.mode-text1-one{
+  background:url(../imgs/mt-1.png) no-repeat left top/100% 100%;
+}
+.model-text2{
+  position:absolute;
+  right: 1.1rem;
+  top: 1.9rem;
+  width:0.46rem;
+  height:1.86rem;
+  z-index:1;
+}
+.mode-text2-one{
+  background:url(../imgs/mtc-1.png) no-repeat left top/100% 100%;
+}
+.model-ll{
+  width:3.66rem;
+  height:1.95rem;
+  background:url(../imgs/ll.png) no-repeat left top/100% 100%;
+  position:absolute;
+  bottom:3.2rem;
+  right:0.18rem;
+}
+.mode-txt{
+  width: 6.3rem;
+  height:3.35rem;
+  left:0.6rem;
+  /*top:1.47rem;*/
+  top:12.19vh;
+  padding:0 0.25rem;
+  box-sizing: border-box;
+  position:absolute;
+  background:url(../imgs/mode-t-bg.png) no-repeat left top/100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mode-txt p{
+  color:white;
+  font-size:0.4rem;
+  margin:0;
+  padding:0;
+}
+.mode-txt p:last-child{
+  text-align: right;
+}
+.model-bt{
+  width:2.3rem;
+  height:0.91rem;
+  position:absolute;
+  bottom: 1.3rem;
+  left: 4.5rem;
+  background:url(../imgs/model-bt.png) no-repeat left top/100% 100%;
+}
+
+.nextStep{
+  width:2.02rem;
+  height:0.63rem;
+  border-radius:0.1rem;
+  background:url(../imgs/bt-bg.jpg) repeat-x left top/1px 100%;
+  position:absolute;
+  bottom:1.58rem;
+  left:0;
+  right:0;
+  margin:0 auto;
+}
+.nextStep img{
+  width:0.97rem;
+  height:0.31rem;
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  top:0;
+  margin:auto;
+}
+
+.selectBox{
+  width:100%;
+  height:1.22rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position:absolute;
+}
+.se-first{
+  top:19.651vh;
+}
+.se-first .select-txt{
+  width:3.73rem;
+  height:0.39rem;
+  background:url(../imgs/se-fir.png) no-repeat left top/100% 100%;
+}
+.se-second{
+  top:50vh;
+}
+.se-second .select-txt{
+  width:1.29rem;
+  height:0.4rem;
+  background:url(../imgs/se-sec.png) no-repeat left top/100% 100%;
+}
+.select-main{
+  width:3.22rem;
+  height:0.64rem;
+  background:url(../imgs/bt-bg.jpg) repeat-x left top/1px 100%;
+  border-radius:0.1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.select-main .select{
+  flex:1;
+  display: inline-block;
+  width:100%;
+  height:100%;
+  background:none;
+  border:none;
+  text-align-last:center;
+  color:#be0812;
+  font-size:0.4rem;
+  appearance: none;
+  -webkit-appearance: none;   /*去除chrome浏览器的默认下拉图片*/
+  -moz-appearance: none;  /*去除Firefox浏览器的默认下拉图片*/
+}
+.select option{
+  font-size:0.16rem;
+}
+.select-main .down{
+  width:0.89rem;
+  height:0.64rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.down .down-main{
+  width:0.42rem;
+  height:0.42rem;
+  border-radius:0.21rem;
+  background:#be0812 url(../imgs/down.png) no-repeat center center/0.27rem 0.14rem;
+}
+.textarea{
+  width:5.79rem;
+  height:7.09rem;
+  position:absolute;
+  background:url(../imgs/area.png) no-repeat left top/100% 100%;
+  left:0;
+  right:0;
+  top:16.17vh;
+  /*top:0;
+  bottom:0;*/
+  margin:auto;
+  display: flex;
+  justify-content: center;
+}
+.textarea .txt{
+  padding:0.1rem;
+  box-sizing: border-box;
+  display: inline-block;
+  width:4.8rem;
+  height:4.4rem;
+  margin-left:-0.1rem;
+  margin-top:0.2rem;
+  border:none;
+  font-size:0.3rem;
+  line-height:0.58rem;
+  color:gray;
+  background:none;
+}
+.textarea .init{
+  padding:0.1rem;
+  box-sizing: border-box;
+  width:4.8rem;
+  height:4.4rem;
+  margin-left:-0.1rem;
+  margin-top:0.2rem;
+  color:gray;
+  font-size:0.3rem;
+  line-height:0.58rem;
+}
+.textarea .init span{
+  background: #91a9aa;
+  position:relative;
+}
+.textarea .init span::before{
+  position:absolute;
+  left:-0.05rem;
+  top:-0.02rem;
+  content:'';
+  width:0.1rem;
+  height:0.42rem;
+  display: inline-block;
+  background:url(../imgs/left.png) no-repeat left top;
+  background-size:100% 100%;
+}
+.textarea .init span::after{
+  position:absolute;
+  right:-0.05rem;
+  bottom:-0.02rem;
+  content:'';
+  width:0.1rem;
+  height:0.42rem;
+  display: inline-block;
+  background:url(../imgs/right.png) no-repeat left top;
+  background-size:100% 100%;
+}
+.shadow{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:url(../imgs/shadow.png) no-repeat left top;
+  background-size:100% 100%;
+  z-index:99;
+}
+
+
