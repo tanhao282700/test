@@ -212,10 +212,10 @@ input::-webkit-input-placeholder {
   left:3.5rem;
   /*top:5vh;*/
   top:0;
-  animation: pigFirstAnimate 1.2s;
-  -moz-animation: pigFirstAnimate 1.2s;	/* Firefox */
-  -webkit-animation: pigFirstAnimate 1.2s;	/* Safari 和 Chrome */
-  -o-animation: pigFirstAnimate 1.2s;
+  animation: pigFirstAnimate 0.7s;
+  -moz-animation: pigFirstAnimate 0.7s;	/* Firefox */
+  -webkit-animation: pigFirstAnimate 0.7s;	/* Safari 和 Chrome */
+  -o-animation: pigFirstAnimate 0.7s;
   animation-fill-mode:forwards;
   animation-timing-function:ease-in-out;
 }
