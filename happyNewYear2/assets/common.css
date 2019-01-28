@@ -407,7 +407,8 @@ input::-webkit-input-placeholder {
   background:url(../imgs/top7.png) no-repeat left top/100% 100%;
   position:absolute;
   left:1.4rem;
-  bottom:7.25vh;
+  /*bottom:7.25vh;*/
+  top: 75.77vh;
   opacity:0;
   z-index:11;
 }
