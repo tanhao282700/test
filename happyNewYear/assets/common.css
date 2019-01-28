@@ -91,6 +91,7 @@ input::-webkit-input-placeholder {
   position:relative;
 }
 .clounds1{
+  z-index:2;
   width:3.27rem;
   height:1.16rem;
   left:2.37rem;
@@ -102,7 +103,7 @@ input::-webkit-input-placeholder {
   -moz-animation: cloundsOne 1s;	/* Firefox */
   -webkit-animation: cloundsOne 1s;	/* Safari 和 Chrome */
   -o-animation: cloundsOne 1s;
-  animation-fill-mode:forwards;
+  /*animation-fill-mode:forwards;*/
   animation-timing-function:ease-in-out;
 }
 @keyframes cloundsOne {
@@ -115,7 +116,18 @@ input::-webkit-input-placeholder {
     opacity:1;
   }
 }
+.model_clound1{
+  width:4.05rem;
+  height:13.43vh;
+  background:url(../imgs/tipsclound.png) no-repeat left top/100% 100%;
+  position:absolute;
+  left: 2.37rem;
+  top: 18vh;
+  opacity:0;
+  z-index:1;
+}
 .clounds2{
+  z-index:2;
   width:3.27rem;
   height:1.16rem;
   left:0.27rem;
@@ -127,7 +139,7 @@ input::-webkit-input-placeholder {
   -moz-animation: cloundsTwo 1s;	/* Firefox */
   -webkit-animation: cloundsTwo 1s;	/* Safari 和 Chrome */
   -o-animation: cloundsTwo 1s;
-  animation-fill-mode:forwards;
+  /*animation-fill-mode:forwards;*/
   animation-timing-function:ease-in-out;
 }
 @keyframes cloundsTwo {
@@ -140,7 +152,18 @@ input::-webkit-input-placeholder {
     opacity:1;
   }
 }
+.model_clound2{
+  width:4.05rem;
+  height:13.43vh;
+  background:url(../imgs/tipsclound.png) no-repeat left top/100% 100%;
+  position:absolute;
+  left:0.27rem;
+  top:33vh;
+  opacity:0;
+  z-index:1;
+}
 .clounds3{
+  z-index:2;
   width:4.62rem;
   height:1.64rem;
   /*right:0.27rem;*/
@@ -153,7 +176,7 @@ input::-webkit-input-placeholder {
   -moz-animation: cloundsThree 1s;	/* Firefox */
   -webkit-animation: cloundsThree 1s;	/* Safari 和 Chrome */
   -o-animation: cloundsThree 1s;
-  animation-fill-mode:forwards;
+  /*animation-fill-mode:forwards;*/
   animation-timing-function:ease-out;
 }
 @keyframes cloundsThree {
@@ -165,6 +188,16 @@ input::-webkit-input-placeholder {
     left:2.67rem;
     opacity:1;
   }
+}
+.model_clound3{
+  width:4.05rem;
+  height:13.43vh;
+  background:url(../imgs/tipsclound.png) no-repeat left top/100% 100%;
+  position:absolute;
+  left:2.9rem;
+  top:49vh;
+  opacity:0;
+  z-index:1;
 }
 .cloundText{
   display: inline-block;
@@ -212,14 +245,15 @@ input::-webkit-input-placeholder {
    left:3.5rem;
    /*top:5vh;*/
    top:0;
-   animation: pigFirstAnimate 0.7s;
-   -moz-animation: pigFirstAnimate 0.7s;	/* Firefox */
-   -webkit-animation: pigFirstAnimate 0.7s;	/* Safari 和 Chrome */
-   -o-animation: pigFirstAnimate 0.7s;
+   animation: pigFirstAnimate 0.5s;
+   -moz-animation: pigFirstAnimate 0.5s;	/* Firefox */
+   -webkit-animation: pigFirstAnimate 0.5s;	/* Safari 和 Chrome */
+   -o-animation: pigFirstAnimate 0.5s;
    animation-fill-mode:forwards;
    animation-timing-function:ease-in-out;
  }
 .animatePig2{
+  z-index:4;
   width: 1.6rem;
   height: 17vh;
   position:absolute;
@@ -227,13 +261,14 @@ input::-webkit-input-placeholder {
   background:url(../imgs/down4.png) no-repeat left top/100% 100%;
   top:5vh;
   opacity:0;
-  animation: animatePig2 0.7s;
-  -moz-animation: animatePig2 0.7s;	/* Firefox */
-  -webkit-animation: animatePig2 0.7s;	/* Safari 和 Chrome */
-  -o-animation: animatePig2 0.7s;
+  animation: animatePig2 0.5s;
+  -moz-animation: animatePig2 0.5s;	/* Firefox */
+  -webkit-animation: animatePig2 0.5s;	/* Safari 和 Chrome */
+  -o-animation: animatePig2 0.5s;
   animation-fill-mode:forwards;
 }
 .animatePig3{
+  z-index:4;
   width: 1.7rem;
   height: 17vh;
   position:absolute;
@@ -358,11 +393,22 @@ input::-webkit-input-placeholder {
 .pig{
   width: 1.6rem;
   height: 17vh;
-  background:url(../imgs/down4.png) no-repeat left top/100% 100%;
+  background:url(../imgs/right1.png) no-repeat left top/100% 100%;
   position:absolute;
-  left:2.23rem;
-  bottom:1.08rem;
+  left:0.5rem;
+  bottom:11.25vh;
   opacity:0;
+  z-index:11;
+}
+.lastPig2{
+  width: 1.6rem;
+  height: 17vh;
+  background:url(../imgs/top7.png) no-repeat left top/100% 100%;
+  position:absolute;
+  left:1.4rem;
+  bottom:7.25vh;
+  opacity:0;
+  z-index:11;
 }
 .pigTips{
   width:100%;
@@ -371,41 +417,45 @@ input::-webkit-input-placeholder {
   left:0;
   top:0;
   background-color:rgba(36,36,36,0.7);
-  z-index:1;
+  z-index:1111;
   opacity:0;
 }
 .pigTipsBg{
   position:absolute;
-  width:6.38rem;
-  height:4.67rem;
-  left:0.78rem;
-  bottom:1.48rem;
-  background:url(../imgs/pigTips.png) no-repeat left top/100% 100%;
+  width:5.72rem;
+  height:20.315vh;
+  left:1.1rem;
+  bottom:28.678vh;
+  background:url(../imgs/tips.png) no-repeat left top/100% 100%;
 }
 
-.model-pig{
-  width:2.33rem;
-  height:2.47rem;
-  background:url(../imgs/pig.png) no-repeat left top/100% 100%;
+.tipsclound{
   position:absolute;
-  left:0.48rem;
-  bottom:1rem;
-  z-index:1;
-}
-.model-text{
+  bottom: 45vh;
+  left:0.2rem;
   width:4.05rem;
-  height:4.47rem;
-  background:url(../imgs/model-bg.png) no-repeat left top/100% 100%;
+  height:13.43vh;
+  background:url(../imgs/tipsclound.png) no-repeat left top/100% 100%;
+  z-index:111;
+  opacity:0;
+}
+.tipsTxt{
   position:absolute;
-  left:0.24rem;
-  bottom:2.56rem;
+  left: 1.65rem;
+  top:50.47vh;
+  width:2.13rem;
+  /*height:31.59vh;*/
+  height:1px;
+  background:url(../imgs/tipsbg.png) no-repeat left top/2.13rem 31.59vh;
+  overflow: hidden;
+  opacity:1;
 }
 .model-text1{
   position:absolute;
-  right: 1.6rem;
-  top: 1.9rem;
+  left:0.3rem;
+  top:8vh;
   width:0.82rem;
-  height:1.9rem;
+  height:15.75vh;
   z-index:1;
 }
 .mode-text1-one{
@@ -413,10 +463,10 @@ input::-webkit-input-placeholder {
 }
 .model-text2{
   position:absolute;
-  right: 1.1rem;
-  top: 1.9rem;
+  right: 0.46rem;
+  top: 8vh;
   width:0.46rem;
-  height:1.86rem;
+  height:15.42vh;
   z-index:1;
 }
 .mode-text2-one{
@@ -424,11 +474,13 @@ input::-webkit-input-placeholder {
 }
 .model-ll{
   width:3.66rem;
-  height:1.95rem;
+  height:16.17vh;
   background:url(../imgs/ll.png) no-repeat left top/100% 100%;
   position:absolute;
-  bottom:3.2rem;
-  right:0.18rem;
+  bottom:28.53vh;
+  /*right:0.18rem;*/
+  right:-0.18rem;
+  opacity:0;
 }
 .mode-txt{
   width: 6.3rem;
@@ -443,6 +495,7 @@ input::-webkit-input-placeholder {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  opacity:0;
 }
 .mode-txt p{
   color:white;
@@ -460,6 +513,7 @@ input::-webkit-input-placeholder {
   bottom: 1.3rem;
   left: 4.5rem;
   background:url(../imgs/model-bt.png) no-repeat left top/100% 100%;
+  opacity:0;
 }
 
 .nextStep{
@@ -472,6 +526,19 @@ input::-webkit-input-placeholder {
   left:0;
   right:0;
   margin:0 auto;
+  opacity:0;
+}
+.nextStep2{
+  width:2.02rem;
+  height:0.63rem;
+  border-radius:0.1rem;
+  background:url(../imgs/bt-bg.jpg) repeat-x left top/1px 100%;
+  position:absolute;
+  bottom:1.58rem;
+  left:0;
+  right:0;
+  margin:0 auto;
+  opacity:0;
 }
 .nextStep img{
   width:0.97rem;
@@ -483,8 +550,19 @@ input::-webkit-input-placeholder {
   top:0;
   margin:auto;
 }
+.nextStep2 img{
+  width:0.97rem;
+  height:0.31rem;
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  top:0;
+  margin:auto;
+}
 
 .selectBox{
+  opacity:0;
   width:100%;
   height:1.22rem;
   display: flex;
@@ -561,6 +639,7 @@ input::-webkit-input-placeholder {
   margin:auto;
   display: flex;
   justify-content: center;
+  opacity:0;
 }
 .textarea .txt{
   padding:0.1rem;
