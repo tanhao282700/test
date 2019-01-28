@@ -70,7 +70,7 @@ setTimeout(function(){
                         var bool3 = new Parabola({
                             el: "#boll",
                             targetEl:'.pig',
-                            curvature: 0.005,
+                            curvature: 0.006,
                             duration: 500,
                             callback: function () {
                                 $(".animatePig3").removeClass('animatePig3-2').addClass('animatePig3-9')
