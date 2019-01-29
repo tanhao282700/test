@@ -5,45 +5,7 @@ $(".clounds1").removeClass('scs-hide')
 $(".clounds2").removeClass('scs-hide')
 $(".clounds3").removeClass('scs-hide')
 
-/*var bool1 = new Parabola({
-    el: "#boll",
-    targetEl:'.clounds2Pig',
-    curvature: 0.005,
-    duration: 1000,
-    callback: function () {
-        /!*alert("完成后回调")*!/
-        var bool2 = new Parabola({
-            el: "#boll",
-            targetEl:'.clounds3Pig',
-            curvature: 0.005,
-            duration: 1000,
-            callback: function () {
-                /!*alert("完成后回调")*!/
-                var bool3 = new Parabola({
-                    el: "#boll",
-                    targetEl:'.pig',
-                    curvature: 0.02,
-                    duration: 1000,
-                    callback: function () {
-                        setTimeout(function(){
-                            $(".pigTips").removeClass('scs-hide')
-                            $(".pigTips").animate({opacity:1},1000,'swing')
-                            $(".animatePig").animate({opacity:0},1000,'swing')
-                        },500)
-                    }
-                });
-                setTimeout(function(){
-                    $(".clound3text").removeClass('scs-hide')
-                    bool3.start()
-                },1000)
-            }
-        });
-        setTimeout(function(){
-            $(".clound2text").removeClass('scs-hide')
-            bool2.start()
-        },1000)
-    }
-});*/
+
 
 setTimeout(function(){
     $(".animatePig").removeClass('scs-hide')
@@ -81,6 +43,7 @@ setTimeout(function(){
                                          $(".pig").css({opacity:1})
                                          $(".pigTips").removeClass('scs-hide')
                                          $(".pigTips").animate({opacity:1},1000,'swing')
+                                         $(".zhezhao").hide()
                                      },500)
                                      },300)
 
@@ -127,7 +90,13 @@ $(".pigTips").click(function(){
 
 
 $(".clounds1").click(function(){
-    $(".clounds1").animate({opacity:0},100,'swing')
+    $(".model-text1").css({background:'url(./imgs/mt-1.png) no-repeat left top/100% 100%',width:'0.58rem',height:'15.42vh',left:'0.3rem',top:'7vh'})
+    $(".model-text2").css({background:'url(./imgs/mtc-1.png) no-repeat left top/100% 100%',width:'1rem',height:'15.75vh',right:'0.27rem',top:'7vh'})
+    $(".clounds1").animate({opacity:0},100,'swing',function(){
+        $(".clounds1").hide()
+        $(".clounds2").hide()
+        $(".clounds3").hide()
+    })
     $(".model_clound1").animate({opacity:1},100,'swing',function(){
         var clounds = new Parabola({
             el: ".model_clound1",
@@ -203,7 +172,14 @@ $(".clounds1").click(function(){
 })
 
 $(".clounds2").click(function(){
-    $(".clounds2").animate({opacity:0},100,'swing')
+    $(".model-text1").css({background:'url(./imgs/mt-2.png) no-repeat left top/100% 100%'})
+    $(".model-text2").css({background:'url(./imgs/mtc-2.png) no-repeat left top/100% 100%'})
+
+    $(".clounds2").animate({opacity:0},100,'swing',function(){
+        $(".clounds1").hide()
+        $(".clounds2").hide()
+        $(".clounds3").hide()
+    })
     $(".model_clound2").animate({opacity:1},100,'swing',function(){
         var clounds = new Parabola({
             el: ".model_clound2",
@@ -279,7 +255,13 @@ $(".clounds2").click(function(){
 })
 
 $(".clounds3").click(function(){
-    $(".clounds3").animate({opacity:0},100,'swing')
+    $(".model-text1").css({background:'url(./imgs/mt-3.png) no-repeat left top/100% 100%'})
+    $(".model-text2").css({background:'url(./imgs/mtc-3.png) no-repeat left top/100% 100%'})
+    $(".clounds3").animate({opacity:0},100,'swing',function(){
+        $(".clounds1").hide()
+        $(".clounds2").hide()
+        $(".clounds3").hide()
+    })
     $(".model_clound3").animate({opacity:1},100,'swing',function(){
         var clounds = new Parabola({
             el: ".model_clound3",
@@ -419,3 +401,52 @@ $(".nextStep2").click(function(){
         //...........
     }
 })
+
+
+
+
+var audio = document.getElementById('audio');
+//----------处理自动播放------------
+//--创建页面监听，等待微信端页面加载完毕 触发音频播放
+document.addEventListener('DOMContentLoaded', function () {
+    function audioAutoPlay() {
+            playBgMusic(true);
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                playBgMusic(true);
+            }, false);
+    }
+        audioAutoPlay();
+});
+
+//--创建触摸监听，当浏览器打开页面时，触摸屏幕触发事件，进行音频播放
+function audioAutoPlay() {
+        playBgMusic(true);
+        document.removeEventListener('touchstart',audioAutoPlay);
+}
+document.addEventListener('touchstart', audioAutoPlay);
+//----------处理页面激活------------
+var hiddenProperty = 'hidden' in document ? 'hidden' :
+    'webkitHidden' in document ? 'webkitHidden' :
+        'mozHidden' in document ? 'mozHidden' :
+            null;
+var visibilityChangeEvent = hiddenProperty.replace(/hidden/i, 'visibilitychange');
+var onVisibilityChange = function(){
+    if (!document[hiddenProperty]) {
+        if(!sessionStorage.bgmusic||sessionStorage.bgmusic=='play'){
+            audio.play();
+        }
+    }else{
+        audio.pause();
+    }
+}
+document.addEventListener(visibilityChangeEvent, onVisibilityChange);
+
+function playBgMusic(val){
+    if(val){
+        audio.play();
+        sessionStorage.bgmusic='play';
+    }else{
+        audio.pause();
+        sessionStorage.bgmusic='pause';
+    }
+}
