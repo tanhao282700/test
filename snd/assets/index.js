@@ -39,13 +39,13 @@ var onVisibilityChange = function(){
 document.addEventListener(visibilityChangeEvent, onVisibilityChange);
 
 function playBgMusic(val){
-    /*if(val){
+    if(val){
         audio.play();
         sessionStorage.bgmusic='play';
     }else{
         audio.pause();
         sessionStorage.bgmusic='pause';
-    }*/
+    }
 }
 
 $(function () {
