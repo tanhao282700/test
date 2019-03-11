@@ -1,0 +1,759 @@
+html, body, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  background:#ffffff;
+  font-family: "SourceHanSansCN-Regular", "PingFang SC", "SourceHanSansCN";
+}
+body {
+  background-color: rgba(66,180,230,0.1);
+  overflow: hidden;
+}
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+  /* transparent是全透明黑色(black)的速记法，即一个类似rgba(0,0,0,0)这样的值 */
+}
+
+
+/* Mozilla Firefox 4 to 18 */
+
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+
+
+/* Mozilla Firefox 19+ */
+
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+
+
+/* Internet Explorer 10+ */
+
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+input::-webkit-input-placeholder {
+  /* placeholder颜色  */
+   color: white;
+}
+*{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+.scs-hide{
+  display: none!important;
+}
+
+.main{
+  width:100%;
+  height:100%;
+  background:url(../imgs/bg.png) no-repeat left top/100% 100%;
+  position:relative;
+  z-index:1;
+}
+.main.blackBg::after{
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.58);
+}
+.pageItem{
+    position: absolute;
+    width: 100.1vw;
+    height: 100vh;
+    display: block;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+.part1{
+    opacity: 0;
+    animation-name: scs-fadeInOut;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+.page1{
+    animation-delay: 0s;
+}
+.page2{
+    animation-delay: 3s;
+}
+.page3{
+    animation-delay: 6s;
+}
+.page4{
+    animation-delay: 9s;
+}
+@keyframes scs-fadeInOut {
+    0%{
+        opacity: 0;
+    }
+    35%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.part2{
+    z-index: 2;
+}
+.page5{
+    display: flex;
+    justify-content: center;
+    transition: opacity 1.5s linear;
+    opacity: 0;
+    pointer-events: none;
+}
+.page5.show{
+    opacity: 1;
+    pointer-events: all;
+}
+.page5.show .fiveButton{
+    animation: scs-fadeIn 3.5s linear;
+}
+@keyframes scs-fadeIn {
+    from{opacity: 0}
+    to{opacity: 1}
+}
+.greenLine1,.greenLine2{
+    position: absolute;
+    background-color: #3dcd58;
+    box-shadow: 0 0 4px 3px rgba(61,205,88,.7);
+}
+.greenLine1{
+    width: 0px;
+    height: 2px;
+}
+.greenLine2{
+    width: 2px;
+    height: 0px;
+}
+.page5 .greenLine1{
+    left: 63.5vw;
+    top: 39.5vh;
+}
+.page6{
+    left:100vw;
+}
+.page6 .sq.border{
+    display: flex;
+    background:url(../imgs/sq.png) no-repeat left top/100% 100%;
+}
+.page6 .greenLine1{
+    left: 0;
+    top: 39.5vh;
+}
+.page6 .greenLine2{
+    left: 49.5vw;
+    top: 30vh;
+    display: none;
+}
+.page7,.page8{
+    top:-100vh;
+    display: flex;
+    justify-content: center;
+}
+.page7 .greenLine2,.page8 .greenLine2{
+    left: 49.5vw;
+    bottom: 0;
+    z-index: 1;
+}
+.part3{
+    z-index: 3;
+}
+.page9,.page10{
+    display: none;
+}
+.page10 .greenLine1{
+    left: 0;
+    top: 52.6vh;
+}
+.page10 #page10GreenLine2{
+    left: 68.43vw;
+}
+.page11{
+    left: 100vw;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+}
+.page11 .greenLine1,.page11 .greenLine2{
+    top: 52.6vh;
+}
+.page11 #page11GreenLine1{
+    left: 0;
+}
+.page11 #page11GreenLine2,.page11 #page11GreenLine3,.page11 #page11GreenLine4,.page11 #page11GreenLine5{
+    left: 10vw;
+    display: none;
+}
+.page11 #page11GreenLine4,#page11GreenLine6,#page11GreenLine8{
+    top: 37.6vh;
+}
+.page11 #page11GreenLine5,#page11GreenLine7,#page11GreenLine9{
+    top: 67.6vh;
+}
+.page11 #page11GreenLine6,.page11 #page11GreenLine7{
+    left:65.5vw;
+    display: none;
+}
+.page11 #page11GreenLine8,.page11 #page11GreenLine9{
+    right: 10vw;
+    display: none;
+}
+.page11 #page11GreenLine10{
+    left: 89.5vw;
+    top: 52.6vh;
+    display: none;
+}
+.page12,.page13,.page14,.page15,.page16{
+    left: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.page12 .greenLine1{
+    top: 52.6vh;
+    left: 0;
+}
+.page12 #page12GreenLine2{
+    left: 88.5vw;
+    display: none;
+}
+.page13 .rightBg{
+    background: url("../imgs/page13Img.png") no-repeat left center/32vw auto;
+    position: absolute;
+    left: 68vw;
+    top: 45.6vh;
+    width: 0;
+    height: 12vh;
+}
+.page13 .greenLine1,.page15 .greenLine1,.page16 .greenLine1{
+    top: 52.6vh;
+    left: 0;
+}
+.page14 .leftBg{
+    background: url("../imgs/page14Img.png") no-repeat left center/16vw auto;
+    position: absolute;
+    left: 0;
+    width: 0;
+    top: 45.6vh;
+    height: 12vh;
+}
+.page14 .greenLine1{
+    top: 52.6vh;
+    left: 87vw;
+}
+.page15 #page15GreenLine2{
+    left: 69.5vw;
+}
+.page16 #page16GreenLine2{
+    left: 92vw;
+}
+.page17{
+    left: 100vw;
+}
+.page18{
+    left: 100vw;
+}
+.page18 .logs{
+    width:2.85rem;
+    height:7.462vh;
+    position:absolute;
+    bottom:0;
+    left:1.44rem;
+    background:url(../imgs/firstlogo.png) no-repeat left top/100% 100%;
+}
+.thPart{
+    /*left:0;*/
+    z-index:3;
+}
+.thpartCon{
+    width:6.38rem;
+    height:80.016vh;
+    position:absolute;
+    left:0.58rem;
+    top:4.726vh;
+    background-color: rgba(0,0,0,.3);
+}
+.page18Con{
+    position:absolute;
+    width:5.69rem;
+    height:72.22vh;
+    left:0.345rem;
+    top:3.898vh;
+    border:4px solid #24bb39;
+}
+.txt{
+    width:4.24rem;
+    height:8.292vh;
+    position:absolute;
+    left:0.72rem;
+    top:2.322vh;
+    background:url(../imgs/page18pic.png) no-repeat left top/100% 100%;
+}
+.form{
+    width:4.95rem;
+    height:6.053vh;
+    position:absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left:0.35rem;
+}
+.import{
+    width:0.2rem;
+    height:1.575vh;
+    background:url(../imgs/import.png) no-repeat left top/100% 100%;
+}
+.formCon{
+    text-indent: 0.1rem;
+    font-size:0.3rem;
+    width:4.49rem;
+    height:6.053vh;
+    border: none;
+    box-sizing: border-box;
+    background-color: rgba(255,255,255,.3);
+}
+.form select{
+    appearance: none;
+    -webkit-appearance: none;   /*去除chrome浏览器的默认下拉图片*/
+    -moz-appearance: none;  /*去除Firefox浏览器的默认下拉图片*/
+    color:white;
+    display: inline-block;
+    text-indent: 0.1rem;
+    font-size:0.3rem;
+    width:4.49rem;
+    height:6.053vh;
+    border: none;
+    box-sizing: border-box;
+    background-color: rgba(255,255,255,.3);
+}
+.select{
+    position:relative;
+}
+.db{
+    position:absolute;
+    width:0.33rem;
+    height:1.907vh;
+    background:url(../imgs/db.png) no-repeat left top/100% 100%;
+    right:0.18rem;
+    top:2.073vh;
+}
+.form option{
+    color:black;
+    font-size:0.2rem;
+}
+.form1{
+    top:11.857vh;
+}
+.form2{
+    top:19.9vh;
+}
+.form3{
+    top:28.026vh;
+}
+.form4{
+    top:35.987vh;
+}
+.form5{
+    top:43.947vh;
+}
+.form6{
+    top:52.073vh;
+}
+.sendBth{
+    width:1.75rem;
+    height:4.56vh;
+    position:absolute;
+    background:url(../imgs/send.png) no-repeat left top/100% 100%;
+    left:1.96rem;
+    bottom:3.814vh;
+}
+.page17 .divice1{
+    width: 39.2vw;
+    height: 31.87vw;
+    background:url(../imgs/page17Img2.png) no-repeat left top/100% auto;
+    margin: 8.62vh auto 0;
+    display: none;
+}
+.page17 .divice2{
+    width: 37.1vw;
+    height: 33.87vw;
+    background:url(../imgs/page17Img1.png) no-repeat left top/100% auto;
+    margin: 5.14vh auto 0;
+    display: none;
+}
+.page17 .fifthTxt{
+    width: 81.2vw;
+    height: 41.2vw;
+    background:url(../imgs/page17text2.png) no-repeat center center/80% auto;
+    background-color: rgba(0,0,0,.5);
+    top: 58.78vh;
+    left: 50%;
+    transform: translate(-50%,0);
+    display: none;
+}
+.page17 .f1{
+    left: -.45rem;
+    top: -4.9vh;
+}
+.page17 .f2{
+    right: -.3rem;
+    bottom: -12vh;
+}
+.page17 .firstLog{
+    width: 38vw;
+    height: 12vw;
+}
+
+
+.firstWord{
+  width:6.98rem;
+  height:38.723vh;
+  position:absolute;
+  left:0.27rem;
+  top:10.964vh;
+  background:url(../imgs/firstWord.png) no-repeat left top/100% 100%;
+}
+.square{
+  width:6.73rem;
+  height:75.322%;
+  /*background-color: black;
+  opacity: 0.56;*/
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+  z-index:-1;
+}
+.firstLog{
+  position:absolute;
+  bottom:0;
+  left:1.45rem;
+  width:2.85rem;
+  height:7.462vh;
+  background:url(../imgs/firstlogo.png) no-repeat left top/100% 100%;
+}
+.secondWord{
+  width:7.04rem;
+  height:40.2156vh;
+  position:absolute;
+  background:url(../imgs/second.png) no-repeat left top/100% 100%;
+  left:0.21rem;
+  top:19.9vh;
+}
+.thirdWord{
+  width:7.04rem;
+  height:40.2156vh;
+  position:absolute;
+  background:url(../imgs/third.png) no-repeat left top/100% 100%;
+  left:0.21rem;
+  top:19.9vh;
+}
+.thirdWord .square{
+  height:62.89%;
+}
+.fourthWord{
+  width:7.04rem;
+  height:40.2156vh;
+  position:absolute;
+  background:url(../imgs/fourth.png) no-repeat left top/100% 100%;
+  left:0.21rem;
+  top:19.9vh;
+}
+.fourthWord .square{
+  height:62.89%;
+}
+.five{
+  width:100%;
+  height:100%;
+  position:absolute;
+  background:black;
+  opacity:.58;
+  z-index:-1;
+}
+.fiveCon{
+  width:2.94rem;
+  height:19.8176vh;
+  background:url(../imgs/page5Bg.png) no-repeat left top/100% 100%;
+  position:absolute;
+  top:36.3184vh;
+}
+.fiveButton{
+    width:4.01rem;
+    height:7.38vh;
+    background:url(../imgs/radius.png) no-repeat left top/100% 100%;
+    position:absolute;
+    top:61.61vh;
+}
+.green{
+  width:0.35rem;
+  height:10.46%;
+  background:url(../imgs/green.png) no-repeat left top/100% 100%;
+  position:absolute;
+  display: none;
+}
+.six{
+  width: 100vw;
+  height:55.166vh;
+  position:absolute;
+  left:0;
+  top:29vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.six1{
+  width:50.53vw;
+  height:50.53vw;
+  background:url(../imgs/p1.png) no-repeat left top/100% 100%;
+}
+.six2{
+  width: 71.53vw;
+  height: 28vw;
+  margin-top: -6vw;
+  background:url(../imgs/t1.png) no-repeat left top/100% auto;
+  display: none;
+}
+.six3{
+  width: 75vw;
+  height: 33.5vw;
+  background:url(../imgs/tt1.png) no-repeat left top/100% auto;
+  margin-top: -6vw;
+  display: none;
+}
+.six2.show,.six3.show{
+    display: block;
+    animation: scs-slideUp .3s linear;
+}
+@keyframes scs-slideUp {
+    from{margin-top: -3vw}
+    to{margin-top: -6vw}
+}
+.sq{
+  display: none;
+  width: 61.47vw;
+  height: 61.47vw;
+  align-items: center;
+  justify-content: center;
+
+}
+.sq.flick{
+  display: flex;
+  animation: sqFlicker 1.6s linear infinite;
+}
+@keyframes sqFlicker {
+    0%{opacity: 0}
+    50%{opacity: 1}
+    100%{opacity: 0}
+}
+.seven{
+  width:4.45rem;
+  height:63.516vh;
+  position:absolute;
+  top:24.295vh;
+  z-index: 10;
+  background:url(../imgs/phone.png) no-repeat left top/100% 100%;
+}
+.eight{
+  width: 81.73vw;
+  height:51.33vw;
+  background:url(../imgs/8t.png) no-repeat center center/86.78% auto;
+  background-color: rgba(0,0,0,.5);
+  position:absolute;
+  top:23.05vh;
+  display: none;
+}
+.eight .square{
+  width:100%;
+  height:100%;
+}
+.f1{
+  position:absolute;
+  width:1.08rem;
+  height:6.38vh;
+  left:-0.4rem;
+  top:-3.8vh;
+  background:url(../imgs/f1.png) no-repeat left top/100% 100%;
+}
+.f2{
+  position:absolute;
+  width:1.08rem;
+  height:6.98vh;
+  right:-0.4rem;
+  bottom:-5.3vh;
+  background:url(../imgs/f2.png) no-repeat left top/100% 100%;
+}
+.eighth{
+  width: 28vw;
+  height: 28vw;
+  background:url(../imgs/page8Icon.png) no-repeat left top/100% auto;
+  position:absolute;
+  bottom: 23vw;
+  display: none;
+}
+.night{
+  width:100%;
+  height:100%;
+  position:absolute;
+  background:url(../imgs/bg2.png) no-repeat left top/100% 100%;
+}
+.nightCon{
+  width:5.95rem;
+  height:20.896vh;
+  background:url(../imgs/t9.png) no-repeat center center/3.17rem 9.2vh;
+  position:absolute;
+  left:0.83rem;
+  top:38.06vh;
+}
+.square2{
+  width:100%;
+  height:100%;
+  position:absolute;
+  background:black;
+  opacity: 0.56;
+  z-index:-1;
+}
+.ten{
+  background:url(../imgs/ten.png) no-repeat left top/100% 100%;
+  width: 38.93vw;
+  height: 38.93vw;
+  position:absolute;
+  left: 50%;
+  top:41.708vh;
+  transform: translate(-50%,0);
+}
+.eleven{
+  width:100%;
+  height:100%;
+  position:absolute;
+    display: flex;
+    justify-content: center;
+}
+.elevenCon{
+  position:absolute;
+  width: 90.66vw;
+  height: 51.33vw;
+  background:url(../imgs/11t.png) no-repeat center center/100% auto;
+  bottom:13.35vh;
+    display: none;
+}
+.elevenCon .f1{
+  left:0.1rem;
+}
+.elevenCon .f2{
+  right:-0.2rem;
+}
+.pic{
+  background:url(../imgs/p11.png) no-repeat left top/100% 100%;
+  width: 33.2vw;
+  height: 33.2vw;
+  top:27.363vh;
+  position:absolute;
+    display: none;
+}
+.pic2{
+  background:url(../imgs/p12.png) no-repeat left top/100% 100%;
+  width:33.2vw;
+  height:33.2vw;
+  top: 58.12vh;
+  position:absolute;
+    display: none;
+}
+.elevenCon2{
+    display: none;
+  width:6.18rem;
+  height:17.91vh;
+  position:absolute;
+  bottom:-1.445vh;
+  background:url(../imgs/t12.png) no-repeat center center/4.97rem 12.272vh;
+}
+.thew{
+    width: 82.2vw;
+    height: 66.2vw;
+  background:url(../imgs/p13.png) no-repeat left top/100% 100%;
+  position:absolute;
+  top:33.1vh;
+}
+.threen{
+  width: 41.33vw;
+  height: 41.33vw;
+  position:absolute;
+  background:url(../imgs/p14.png) no-repeat left top/100% 100%;
+  top:40.236vh;
+    z-index: 100;
+}
+.fourtheen{
+  width:6.87rem;
+  height:34.494vh;
+  position:absolute;
+  background:url(../imgs/p15.png) no-repeat left top/100% 100%;
+  left:0.315rem;
+  top:34.245vh;
+}
+.fifthTxt{
+  width:89.73vw;
+  height: 27.73vw;
+  position:absolute;
+  top:20.705vh;
+  background:url(../imgs/t13.png) no-repeat center center/90% auto;
+    background-color: rgba(0,0,0,.5);
+}
+.fifthTxt .f1{
+  left: 0.2rem;
+}
+.fifthTxt .f2{
+  right:-0.15rem;
+}
+.fifthPic{
+  width: 41.33vw;
+  height:41.33vw;
+  position:absolute;
+  background:url(../imgs/p16.png) no-repeat left top/100% 100%;
+  top: 41vh;
+}
+.sixthPic{
+  width: 85.86vw;
+  position:absolute;
+  height:23.6vw;
+  top:47.6vh;
+    background: url(../imgs/page16Bg.png) no-repeat left top/100% auto;
+}
+
+
+
+
+
+
+
